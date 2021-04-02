@@ -1,1 +1,19 @@
-//
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-header{
+    color: white;
+}
+
+#lang-btn {
+    margin: 5px;
+    width: 50px;
+    margin-bottom: 20px;
+}   

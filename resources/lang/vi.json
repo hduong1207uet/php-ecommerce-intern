@@ -1,0 +1,14 @@
+{
+    "Login" : "Đăng nhập",
+    "Register" : "Đăng ký",
+    "Dashboard" : "Trang chính",
+    "You_are_logged_in!" : "Bạn đã đăng nhập thành công !",
+    "E-Mail_address" : "Địa chỉ Email",
+    "Password" : "Mật khẩu",
+    "Remember_me" : "Nhớ tôi trên thiết bị",
+    "Forgot_password" : "Quên mật khẩu ?",
+    "Name" : "Họ tên",
+    "Confirm_password" : "Nhập lại mật khẩu",
+    "Phone_number" : "Số điện thoại",
+    "Go_back" : "Quay lại"
+}

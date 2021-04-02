@@ -1,0 +1,20 @@
+{
+  "name": "php-ecommerce-intern",
+  "description": "",
+  "main": "",
+  "authors": [
+    "HoangDuong <hduong1207.uet@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hduong1207uet/php-ecommerce-intern",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "https://github.com/twbs/bootstrap.git#^4.6.0"
+  }
+}

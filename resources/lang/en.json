@@ -10,5 +10,15 @@
     "Name" : "Name",
     "Confirm_password" : "Confirm Password",
     "Phone_number" : "Phone Number",
-    "Go_back" : "Go back"
+    "Go_back" : "Go back",
+    "User_management" : "Users",
+    "Product_management" : "Products",
+    "Order_management" : "Orders",
+    "Order_detail_management" : "Order details",
+    "Category_management" : "Categories",
+    "Image_management" : "Images",
+    "Comment_management" : "Comments",
+    "Rate_management" : "Rates",
+    "Adminator" : "Adminator",
+    "Logout" : "Logout"
 }

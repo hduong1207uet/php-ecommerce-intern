@@ -4,8 +4,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Fonts Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
 *{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .card-header{
@@ -17,3 +20,27 @@
     width: 50px;
     margin-bottom: 20px;
 }   
+
+.side-bar-row {
+    height: 50px;
+    padding-left: 20px;
+    padding-top: 15px;
+    font-size: bold;
+    cursor: pointer; 
+}
+
+.side-bar-row:hover {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.left-sidebar {
+    height: 91vh;
+    border-top: 2px solid #17a2b8;;
+}
+
+.right-sidebar {
+    height: 91vh;
+    border-left: 2px solid #17a2b8;
+    border-top: 2px solid #17a2b8;
+}

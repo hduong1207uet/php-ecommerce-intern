@@ -10,5 +10,15 @@
     "Name" : "Họ tên",
     "Confirm_password" : "Nhập lại mật khẩu",
     "Phone_number" : "Số điện thoại",
-    "Go_back" : "Quay lại"
+    "Go_back" : "Quay lại",
+    "User_management" : "Người dùng",
+    "Product_management" : "Sản phẩm",
+    "Order_management" : "Đơn hàng",
+    "Order_detail_management" : "Chi tiết đơn hàng",
+    "Category_management" : "Loại sản phẩm",
+    "Image_management" : "Hình ảnh",
+    "Comment_management" : "Bình luận",
+    "Rate_management" : "Đánh giá sản phẩm",
+    "Adminator" : "Quản trị viên",
+    "Logout" : "Đăng xuất"
 }

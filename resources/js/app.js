@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('@fortawesome/fontawesome-free/js/all.js');
 
 $(document).ready(function () {
     //Log out button

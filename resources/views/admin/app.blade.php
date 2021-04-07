@@ -23,7 +23,7 @@
     <div class="container-fluid ml-1">
         <div class="row mt-2">
             <div class="col-md-2">
-                <h2>{{ __('Adminator') }}</h2>              
+                <h2>{{ __('adminator') }}</h2>              
             </div>
             <div class="col-md-7">
                 <!-- Search Box here-->
@@ -37,11 +37,11 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('register') }}</a>
                             </li>
                         @endif
                     @else 
@@ -52,7 +52,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item btn-logout"  href="{{ route('logout') }}">
-                                    {{ __('Logout') }}
+                                    {{ __('logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -68,28 +68,28 @@
         <div class="row">
             <div class="col-md-2 left-sidebar">         
                 <div class="row side-bar-row">
-                    <i class="fas fa-user fa-lg"></i> &emsp;{{ __('User_management') }}
+                    <i class="fas fa-user fa-lg"></i> &emsp;{{ __('user_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="fas fa-guitar fa-lg"></i> &emsp;{{ __('Product_management') }}
+                    <i class="fas fa-guitar fa-lg"></i> &emsp;{{ __('product_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('Order_management') }}
+                    <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('order_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('Order_detail_management') }}
+                    <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('order_detail_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="fas fa-archive fa-lg"></i> &emsp;{{ __('Category_management') }}
+                    <i class="fas fa-archive fa-lg"></i> &emsp;{{ __('category_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="fas fa-images fa-lg"></i> &emsp;{{ __('Image_management') }}
+                    <i class="fas fa-images fa-lg"></i> &emsp;{{ __('image_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="far fa-comments fa-lg"></i> &emsp;{{ __('Comment_management') }}
+                    <i class="far fa-comments fa-lg"></i> &emsp;{{ __('comment_management') }}
                 </div>
                 <div class="row side-bar-row">
-                    <i class="far fa-star fa-lg"></i> &emsp;{{ __('Rate_management') }}
+                    <i class="far fa-star fa-lg"></i> &emsp;{{ __('rate_management') }}
                 </div>
             </div>
             <div class="col-md-10 right-sidebar">

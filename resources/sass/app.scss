@@ -44,3 +44,56 @@
     border-left: 2px solid #17a2b8;
     border-top: 2px solid #17a2b8;
 }
+
+.my-menu li {
+    margin-right: 25px;
+}
+
+.my-menu li:hover {
+    cursor: pointer;
+}
+
+.row2-footer {
+    border-top: 2px solid gray;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.policy-col {
+    width: 14vw;
+    height: 5vw;
+    background-color: yellowgreen;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+}
+
+.banner-div {
+    width: auto;
+    height: 15vw;
+    background-color: rgb(155, 155, 251);
+    text-align: center;
+}
+
+.policy-row {
+    margin-top: 20px;
+}
+
+.guitar-brand {
+    height: 5vw;
+    background-color: yellowgreen;
+}
+
+.margined-row {
+    margin-top: 25px;
+}
+
+.title-row {
+    height: 3vw;
+    background-color: rgb(155, 155, 251);
+}
+
+.content-row {
+    height: 10vw;
+    background-color: yellowgreen;
+}

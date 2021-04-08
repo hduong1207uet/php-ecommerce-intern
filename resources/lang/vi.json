@@ -43,5 +43,20 @@
     "footer_name" : "Công ty cổ phần GUITAR SHOP.",
     "address" : "Địa chỉ",
     "detail_address" : "144 Xuân Thủy, Cầu Giấy, Hà Nội",
-    "payment_method" : "PHƯƠNG THỨC THANH TOÁN"
+    "payment_method" : "PHƯƠNG THỨC THANH TOÁN",
+    "categories" : "Loại sản phẩm",
+    "add_new_categories" : "Thêm loại mới",
+    "serial" : "STT",
+    "type" : "Tên loại",
+    "description" : "Mô tả",
+    "action" : "Hành động",
+    "edit" : "Sửa",
+    "delete" : "Xóa",
+    "view_all_products" : "Xem tất cả sản phẩm",
+    "add_category" : "Thêm loại mới",
+    "edit_category" : "Sửa loại sản phẩm",
+    "category_created" : "Đã tạo loại sản phẩm mới",
+    "category_updated" : "Đã sửa loại sản phẩm",
+    "category_deleted" : "Đã xóa loại sản phẩm",
+    "delete_msg" : "Bạn có muốn xóa không ?"
 }

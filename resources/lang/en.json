@@ -44,5 +44,20 @@
     "footer_name" : "GUITAR SHOP COMPANY",
     "address" : "Address",
     "detail_address" : "144 Xuan Thuy, Cau Giay, Ha Noi",
-    "payment_method" : "PAYMENT METHODS"
+    "payment_method" : "PAYMENT METHODS",
+    "categories" : "Product categories",
+    "add_new_categories" : "Add new category",
+    "serial" : "Serial",
+    "type" : "Type",
+    "description" : "Description",
+    "action" : "Action",
+    "edit" : "Edit",
+    "delete" : "Delete",
+    "view_all_products" : "View all products",
+    "add_category" : "Add category",
+    "edit_category" : "Edit category",
+    "category_created" : "Category created",
+    "category_updated" : "Category updated",
+    "category_deleted" : "Category deleted",
+    "delete_msg" : "Do you want to delete ?"
 }

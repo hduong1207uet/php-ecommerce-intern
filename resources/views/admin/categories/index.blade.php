@@ -11,7 +11,7 @@
         <!--Table of Categories-->
         <table class="table table-striped table-bordered">
             <thead>
-                <tr class="bold_column">
+                <tr class="font-weight-bold">
                     <td>{{ __("serial") }}</td>
                     <td>{{ __("type") }}</td>
                     <td>{{ __("description") }}</td>

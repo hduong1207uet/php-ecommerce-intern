@@ -8,7 +8,8 @@
     <!--Display errors-->
     @include('messages.error')
     <!--Edit post form-->
-    <form method="post" action="{{ route('categories.store') }}">
+    <form method="post" action="{{ route('categories.update', $category->id) }}">
+        @method('PATCH') 
         @csrf
         <div class="form-group">    
             <label for="type">{{ __("type") }}:</label>

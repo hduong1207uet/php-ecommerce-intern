@@ -11,7 +11,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.card-header{
+.card-header {
     color: white;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .side-bar-row:hover {
-    background-color: #17a2b8;
+    background-color: #5cb85c;
     color: white;
 }
 
@@ -96,4 +96,12 @@
 .content-row {
     height: 10vw;
     background-color: yellowgreen;
+}
+
+.btn-add {
+    margin : 10px 0 10px 0;
+}
+
+.admin-content {
+    margin: 10px 0 0 10px;
 }

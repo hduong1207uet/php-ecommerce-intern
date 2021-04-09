@@ -70,9 +70,13 @@
                 <div class="row side-bar-row">
                     <i class="fas fa-user fa-lg"></i> &emsp;{{ __('user_management') }}
                 </div>
-                <div class="row side-bar-row">
-                    <i class="fas fa-guitar fa-lg"></i> &emsp;{{ __('product_management') }}
-                </div>
+
+                <a href="{{ route('products.index') }}">
+                    <div class="row side-bar-row">
+                        <i class="fas fa-guitar fa-lg"></i> &emsp;{{ __('product_management') }}
+                    </div>
+                </a>
+
                 <div class="row side-bar-row">
                     <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('order_management') }}
                 </div>
@@ -81,9 +85,9 @@
                 </div>
 
                 <a href="{{ route('categories.index') }}">
-                <div class="row side-bar-row">
-                    <i class="fas fa-archive fa-lg"></i> &emsp;{{ __('category_management') }}
-                </div>
+                    <div class="row side-bar-row">
+                        <i class="fas fa-archive fa-lg"></i> &emsp;{{ __('category_management') }}
+                    </div>
                 </a>
 
                 <div class="row side-bar-row">

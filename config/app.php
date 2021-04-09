@@ -15,6 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'Guitar Shop'),
 
+    //Number of records per page
+
+    'records_per_page' => env('RECORDS_PER_PAGE', 10),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

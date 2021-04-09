@@ -59,5 +59,19 @@
     "category_created" : "Category created",
     "category_updated" : "Category updated",
     "category_deleted" : "Category deleted",
-    "delete_msg" : "Do you want to delete ?"
+    "delete_msg" : "Do you want to delete ?",
+    "add_new_product" : "Add new product",
+    "products" : "Products",
+    "product_name" : "Product name",
+    "price" : "Price",
+    "category" : "Category",
+    "supplier" : "Supplier",
+    "avg_rate" : "Average rate",
+    "view_images" : "View images",
+    "view_comments" : "View comments",
+    "view_rates" : "View rates",
+    "product_created" : "Product created",
+    "product_updated" : "Product updated",
+    "product_deleted" : "Product deleted",
+    "edit_product" : "Edit product"
 }

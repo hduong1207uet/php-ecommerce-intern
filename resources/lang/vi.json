@@ -72,5 +72,14 @@
     "product_created" : "Đã tạo mới sản phẩm",
     "product_updated" : "Đã sửa sản phẩm",
     "product_deleted" : "Đã xóa sản phẩm",
-    "edit_product" : "Sửa sản phẩm"
+    "edit_product" : "Sửa sản phẩm",
+    "product_images" : "Ảnh sản phẩm",
+    "add_new_images" : "Thêm ảnh mới",
+    "image_content" : "Nội dung ảnh",
+    "file_path" : "Đường dẫn tệp",
+    "edit_image" : "Sửa ảnh",
+    "image_created" : "Đã thêm ảnh.",
+    "image_updated" : "Đã sửa ảnh.",
+    "image_deleted" : "Đã xóa ảnh.",
+    "product_image" : "Ảnh sản phẩm"
 }

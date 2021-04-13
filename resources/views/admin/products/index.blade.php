@@ -43,7 +43,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary btn-sm">{{ __('view_images') }}</a>
+                        <a href="{{ route('products.view_images', $product->id) }}" class="btn btn-primary btn-sm">{{ __('view_images') }}</a>
                     </td>
                     <td>
                         <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary btn-sm">{{ __('view_comments') }}</a>

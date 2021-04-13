@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
 
     <!-- Boostrap -->    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -91,16 +92,13 @@
                 </a>
 
                 <div class="row side-bar-row">
-                    <i class="fas fa-images fa-lg"></i> &emsp;{{ __('image_management') }}
-                </div>
-                <div class="row side-bar-row">
                     <i class="far fa-comments fa-lg"></i> &emsp;{{ __('comment_management') }}
                 </div>
                 <div class="row side-bar-row">
                     <i class="far fa-star fa-lg"></i> &emsp;{{ __('rate_management') }}
                 </div>
             </div>
-            <div class="col-md-10 right-sidebar">
+            <div class="col-md-10 right-sidebar overflow-auto">
                     @yield('admin-content')
             </div>
         </div>

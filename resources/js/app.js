@@ -32,4 +32,14 @@ $(document).ready(function () {
             $('#delete_product_' + product_id).submit();
         }
     });
+
+    //Confirm delete image
+    $(".btn_delete_image").on("click", function () {
+        let image_id = $(this).data('id');
+        let delete_msg =  $(this).data('delete_msg');
+        //Confirm delete action
+        if (confirm(delete_msg)) {
+            $('#delete_image_' + image_id).submit();
+        }
+    });
 });

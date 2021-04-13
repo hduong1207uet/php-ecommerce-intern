@@ -58,5 +58,19 @@
     "category_created" : "Đã tạo loại sản phẩm mới",
     "category_updated" : "Đã sửa loại sản phẩm",
     "category_deleted" : "Đã xóa loại sản phẩm",
-    "delete_msg" : "Bạn có muốn xóa không ?"
+    "delete_msg" : "Bạn có muốn xóa không ?",
+    "add_new_product" : "Thêm mới sản phẩm",
+    "products" : "Sản phẩm",
+    "product_name" : "Tên sản phẩm",
+    "price" : "Giá",
+    "category" : "Loại sản phẩm",
+    "supplier" : "Nhà sản xuất",
+    "avg_rate" : "Đánh giá trung bình",
+    "view_images" : "Xem ảnh sản phẩm",
+    "view_comments" : "Xem bình luận",
+    "view_rates" : "Xem đánh giá",
+    "product_created" : "Đã tạo mới sản phẩm",
+    "product_updated" : "Đã sửa sản phẩm",
+    "product_deleted" : "Đã xóa sản phẩm",
+    "edit_product" : "Sửa sản phẩm"
 }

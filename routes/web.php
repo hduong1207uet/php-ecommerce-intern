@@ -20,6 +20,9 @@ Route::get('lang/{lang}','LangController@changeLang')->name('lang');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resources([
-    'categories' => 'Admin\CategoryController',    
-]);
+Route::namespace('Admin')->group(function () {
+    Route::resources([
+        'categories' => 'CategoryController',
+        'products' => 'ProductController',
+    ]);
+});

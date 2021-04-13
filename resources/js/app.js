@@ -22,4 +22,14 @@ $(document).ready(function () {
             $('#delete_category_'+category_id).submit();
         }
     });
+
+    //Confirm delte product
+    $(".btn_delete_product").on("click", function () {
+        var product_id = $(this).data('id');
+        var delete_msg =  $(this).data('delete_msg');
+        //Confirm delete action
+        if (confirm(delete_msg)) {
+            $('#delete_product_' + product_id).submit();
+        }
+    });
 });

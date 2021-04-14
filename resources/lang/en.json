@@ -73,5 +73,14 @@
     "product_created" : "Product created",
     "product_updated" : "Product updated",
     "product_deleted" : "Product deleted",
-    "edit_product" : "Edit product"
+    "edit_product" : "Edit product",
+    "product_images" : "Product Images",
+    "add_new_images" : "Add new images",
+    "image_content" : "Image content",
+    "file_path" : "File path",
+    "edit_image" : "Edit image",
+    "image_created" : "Image created.",
+    "image_updated" : "Image updated.",
+    "image_deleted" : "Image deleted.",
+    "product_image" : "Product image"
 }

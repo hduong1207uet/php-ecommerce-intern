@@ -21,8 +21,11 @@ Route::get('lang/{lang}','LangController@changeLang')->name('lang');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::namespace('Admin')->group(function () {
+    Route::get('/products/view-images/{id}', 'ImageController@viewImages')->name('products.view_images');
+    
     Route::resources([
         'categories' => 'CategoryController',
         'products' => 'ProductController',
+        'images' => 'ImageController',
     ]);
 });

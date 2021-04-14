@@ -13,7 +13,6 @@ class Image extends Model
      */
     protected $guarded = [
         'id',
-        'asset_uri',
     ];
 
     /**

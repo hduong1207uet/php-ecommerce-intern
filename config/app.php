@@ -18,7 +18,12 @@ return [
     //Number of records per page
 
     'records_per_page' => env('RECORDS_PER_PAGE', 10),
-
+    'records_recommended_guitar' => env('RECORDS_RECOMMENDED_GUITAR', 4),
+    'records_acoustic_guitar' => env('RECORDS_ACOUSTIC_GUITAR', 4),
+    'records_classic_guitar' => env('RECORDS_CLASSIC_GUITAR', 4),
+    'acoustic_id' => env('ACOUSTIC_ID', 1),
+    'classic_id' => env('CLASSIC_ID', 2),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Environment

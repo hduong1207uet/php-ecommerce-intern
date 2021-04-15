@@ -82,5 +82,19 @@
     "image_created" : "Image created.",
     "image_updated" : "Image updated.",
     "image_deleted" : "Image deleted.",
-    "product_image" : "Product image"
+    "product_image" : "Product image",
+    "add_to_cart" : "Add to card",
+    "view_details" : "View details",
+    "recommended_guitar" : "Recommended guitar",
+    "acoustic_guitar" : "Acoustic Guitar",
+    "classic_guitar" : "Classic Guitar",
+    "electric_guitar" : "Electric guitar",
+    "installment" : "INSTALLMENT",
+    "purchase_with_0_percent_interest" : "Purchase with 0% interest",
+    "transportation" : "TRANSPORTATION",
+    "professional_and_fast" : "Professional and fast",
+    "guarentee" : "GUARENTEE",
+    "efficiency_quality" : "Efficiency and quality",
+    "agency" : "AGENCY",
+    "spread_throughout_Vietnam"  : "Spread throughout Vietnam"
 }

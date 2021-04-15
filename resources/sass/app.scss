@@ -45,14 +45,6 @@
     border-top: 2px solid #17a2b8;
 }
 
-.my-menu li {
-    margin-right: 25px;
-}
-
-.my-menu li:hover {
-    cursor: pointer;
-}
-
 .row2-footer {
     border-top: 2px solid gray;
     padding-top: 20px;
@@ -61,16 +53,35 @@
 
 .policy-col {
     width: 14vw;
-    height: 5vw;
+    height: 4.5vw;
     background-color: yellowgreen;
     color: white;
     text-align: center;
-    margin-top: auto;
+}
+
+.policy-col-content {
+    height: 100%;
+    float: left;
+}
+
+.policy-col-content p {
+    font-size: 14px;
+    text-align: initial;
+    padding-top: 15px;   
+}
+
+.policy-col:hover {
+    cursor: pointer;
+}
+
+.icon-policy {
+    font-size: 65px;
+    padding-top: 12px;
 }
 
 .banner-div {
     width: auto;
-    height: 15vw;
+    height: auto;
     background-color: rgb(155, 155, 251);
     text-align: center;
 }
@@ -94,8 +105,7 @@
 }
 
 .content-row {
-    height: 10vw;
-    background-color: yellowgreen;
+    height: auto;
 }
 
 .btn-add {
@@ -104,4 +114,41 @@
 
 .admin-content {
     margin: 10px 0 0 10px;
+}
+
+.top-menu {
+    background-color: rgb(255, 204, 0); 
+}
+
+.my-menu li {
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.btn {
+    font-size: 15px !important;
+    
+}
+
+.client-card {
+    border : 1px solid silver !important;
+    width: 17.4rem !important;
+    margin: 0;
+}
+
+.client-card-body {
+    border-top :1px solid silver;
+}
+    
+.card-price {
+    color: red;
+}
+
+.col-11 h5 {
+    padding-top: 15px;
+    margin-left: 10px;
+}    
+.col-1 a {
+    margin-right: 10px;
 }

@@ -16,12 +16,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" defer>
+    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}" defer></script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name') }}
@@ -53,8 +53,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item btn-logout"  href="{{ route('logout') }}">
                                         {{ __('Logout') }}
-                                    </a>
-
+                                    </a>                                
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -70,78 +69,12 @@
                 </div>
             </div>
         </nav>
-
        
-        <div class="container-fluid mt-0">
-            <div class="container pl-0 pr-0">
-             <!-- Menu -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">            
-                        <ul class="nav navbar-nav my-menu text-uppercase">
-                            
-                        </ul>
-                        <!-- Search box-->
-                        <form class="navbar-form navbar-left" action ="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="{{ __('search') }}" name="search">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="fab fa-searchengin fa-lg"></i>
-                                    </button>    
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
-            </div>    
+        <div class="container-fluid mt-0">            
             @yield('content')
         </div>
 
-        <div class="container-fluid my-footer margined-row ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        {{ __('guitarshop_inf') }}<br>
-                        <a href="#">{{ __('about_us') }}</a><br>
-                        <a href="#">{{ __('showroms_agency') }}</a><br>
-                        <a href="#">{{ __('contact_us') }}</a><br>
-                        <a href="#">{{ __('installment_purchase') }}</a><br>
-                        <a href="#">{{ __('website_terms_of_use') }}</a><br>
-                        <a href="#">{{ __('recruitment') }}</a><br>
-                    </div>
-                    <div class="col-3">
-                        {{ __('general_guide') }}<br>
-                        <a href="#">{{ __('delivery_and_return_product') }}</a><br>
-                        <a href="#">{{ __('purchase_guide') }}</a><br>
-                        <a href="#">{{ __('payment_and_security') }}</a><br>
-                        <a href="#">{{ __('warranty_policy') }}</a><br>
-                        <a href="#">{{ __('activate_waranty') }}</a><br>
-                    </div>
-                    <div class="col-4">
-                        {{ __('customer_support') }}<br>
-                        {{ __('hotline') }} : <a href="#">1800 6715 </a><br>
-                        {{ __('complaints_and_warranty') }} : <a href="#">028710 88 333</a><br>
-                        {{ __('timeserver') }} : <a href="#">8h-22h</a><br>
-                        Email: <a href="#">info@guitarshop.com</a><br>
-                    </div>
-                    <div class="col-2">
-                        {{ __('social_pages') }}
-                    </div>                    
-                </div>
-                <div class="row margined-row">
-                    <div class="col-6">
-                        {{ __('footer_name') }}<br>
-                        {{ __('address') }} : {{ __('detail_address') }}<br>
-                        {{ __('phone_number') }} : <a href="#">1800 1998</a><br>
-                        {{ __('hotline') }} : <a href="#">028710 120923</a><br>
-                        Email: <a href="#">info@guitarshop.com</a>
-                    </div>
-                    <div class="col-6">
-                        {{ __('payment_method') }}
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </body>
 </html>

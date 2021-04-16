@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/bower_components
+/public/images_assets/products
 /public/css
 /public/js
 /storage/*.key

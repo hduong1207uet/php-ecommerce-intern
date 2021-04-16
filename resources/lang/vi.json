@@ -81,5 +81,19 @@
     "image_created" : "Đã thêm ảnh.",
     "image_updated" : "Đã sửa ảnh.",
     "image_deleted" : "Đã xóa ảnh.",
-    "product_image" : "Ảnh sản phẩm"
+    "product_image" : "Ảnh sản phẩm",
+    "add_to_cart" : "Thêm vào giỏ hàng",
+    "view_details" : "Chi tiết",
+    "recommended_guitar" : "Guitar được đề xuất",
+    "acoustic_guitar" : "Acoustic Guitar",
+    "classic_guitar" : "Classic Guitar",
+    "electric_guitar" : "Electric guitar",
+    "installment" : "TRẢ GÓP",
+    "purchase_with_0_percent_interest" : "Mua hàng với lãi suất 0%",
+    "transportation" : "VẬN CHUYỂN",
+    "professional_and_fast" : "Chuyên nghiệp, tốc độ",
+    "guarentee" : "BẢO HÀNH",
+    "efficiency_quality" : "Hiệu quả, chất lượng",
+    "agency" : "ĐẠI LÝ",
+    "spread_throughout_Vietnam"  : "Trải rộng khắp Việt Nam"
 }

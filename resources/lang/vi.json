@@ -42,7 +42,6 @@
     "social_pages" : "CÁC TRANG XÃ HỘI",
     "footer_name" : "Công ty cổ phần GUITAR SHOP.",
     "address" : "Địa chỉ",
-    "detail_address" : "144 Xuân Thủy, Cầu Giấy, Hà Nội",
     "payment_method" : "PHƯƠNG THỨC THANH TOÁN",
     "categories" : "Loại sản phẩm",
     "add_new_categories" : "Thêm loại mới",
@@ -95,5 +94,13 @@
     "guarentee" : "BẢO HÀNH",
     "efficiency_quality" : "Hiệu quả, chất lượng",
     "agency" : "ĐẠI LÝ",
-    "spread_throughout_Vietnam"  : "Trải rộng khắp Việt Nam"
+    "spread_throughout_Vietnam"  : "Trải rộng khắp Việt Nam",
+    "total" : "Tổng",
+    "subtotal" : "Tổng phụ",
+    "product" : "Sản phẩm",
+    "quantity" : "Số lượng",
+    "continue_shopping" : "Tiếp tục mua hàng",
+    "add_product_successfully" : "Thêm sản phẩm vào giỏ hàng thành công.",
+    "cart_updated_successfully" : "Cập nhật giỏ hàng thành công.",
+    "product_removed_successfully" : "Xóa sản phẩm khỏi giỏ hàng thành công."
 }

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('client.app')
 
-@section('content')
+@section('home-content')
     <!-- Menu -->
     <div class="row top-menu">
         <div class="container pl-0 pr-0">
@@ -133,9 +133,14 @@
                                             <img class="card-img-top" src="{{ asset('images_assets/products/' . $recommededGuitar->featured_img) }}" alt="Card image cap">
                                             <div class="card-body client-card-body">
                                                 <h5 class="card-title">{{ $recommededGuitar->name }}</h5>
-                                                <h6 class="card-price">{{ $recommededGuitar->price }} $</h6>                                       
-                                                <a href="#" class="btn btn-primary">{{ __('add_to_cart') }}</a>
-                                                <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                <h6 class="card-price">{{ $recommededGuitar->price }} $</h6>                               
+                                                <div class="row">
+                                                    <form id="add_product_{{ $recommededGuitar->id }}" action="{{ route('add_product_to_cart', $recommededGuitar->id) }}" method="post">
+                                                        @csrf                                                    
+                                                        <button class="btn btn-primary btn_add_product_to_cart" data-id="{{ $recommededGuitar->id }}" type="button">{{ __('add_to_cart') }}</button>
+                                                    </form>
+                                                    <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     @endforeach                                                              
@@ -175,8 +180,13 @@
                                             <div class="card-body client-card-body">
                                                 <h5 class="card-title">{{ $acousticGuitar->name }}</h5>
                                                 <h6 class="card-price">{{ $acousticGuitar->price }} $</h6>                                       
-                                                <a href="#" class="btn btn-primary">{{ __('add_to_cart') }}</a>
-                                                <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                <div class="row">
+                                                    <form id="add_product_{{ $acousticGuitar->id }}" action="{{ route('add_product_to_cart', $acousticGuitar->id) }}" method="post">
+                                                        @csrf                                                    
+                                                        <button class="btn btn-primary btn_add_product_to_cart" data-id="{{ $acousticGuitar->id }}" type="button">{{ __('add_to_cart') }}</button>
+                                                    </form>
+                                                    <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                </div>    
                                             </div>
                                         </div>
                                     @endforeach                                                              
@@ -215,9 +225,14 @@
                                             <img class="card-img-top" src="{{ asset('images_assets/products/' . $classicGuitar->featured_img) }}" alt="Card image cap">
                                             <div class="card-body client-card-body">
                                                 <h5 class="card-title">{{ $classicGuitar->name }}</h5>
-                                                <h6 class="card-price">{{ $classicGuitar->price }} $</h6>                                       
-                                                <a href="#" class="btn btn-primary">{{ __('add_to_cart') }}</a>
-                                                <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                <h6 class="card-price">{{ $classicGuitar->price }} $</h6>
+                                                <div class="row">
+                                                    <form id="add_product_{{ $classicGuitar->id }}" action="{{ route('add_product_to_cart', $classicGuitar->id) }}" method="post">
+                                                        @csrf                                                    
+                                                        <button class="btn btn-primary btn_add_product_to_cart" data-id="{{ $classicGuitar->id }}" type="button">{{ __('add_to_cart') }}</button>
+                                                    </form>                                                                                       
+                                                    <a href="#" class="btn btn-danger" style="float:left">{{ __('view_details') }}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     @endforeach                                                              
@@ -234,52 +249,4 @@
     <div class="row guitar-brand margined-row">
         
     </div>
-
-    <div class="row mb-5">
-        <div class="container-fluid my-footer margined-row ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                            {{ __('guitarshop_inf') }}<br>
-                            <a href="#">{{ __('about_us') }}</a><br>
-                            <a href="#">{{ __('showroms_agency') }}</a><br>
-                            <a href="#">{{ __('contact_us') }}</a><br>
-                            <a href="#">{{ __('installment_purchase') }}</a><br>
-                            <a href="#">{{ __('website_terms_of_use') }}</a><br>
-                            <a href="#">{{ __('recruitment') }}</a><br>
-                        </div>
-                        <div class="col-3">
-                            {{ __('general_guide') }}<br>
-                            <a href="#">{{ __('delivery_and_return_product') }}</a><br>
-                            <a href="#">{{ __('purchase_guide') }}</a><br>
-                            <a href="#">{{ __('payment_and_security') }}</a><br>
-                            <a href="#">{{ __('warranty_policy') }}</a><br>
-                            <a href="#">{{ __('activate_waranty') }}</a><br>
-                        </div>
-                        <div class="col-4">
-                            {{ __('customer_support') }}<br>
-                            {{ __('hotline') }} : <a href="#">1800 6715 </a><br>
-                            {{ __('complaints_and_warranty') }} : <a href="#">028710 88 333</a><br>
-                            {{ __('timeserver') }} : <a href="#">8h-22h</a><br>
-                            Email: <a href="#">info@guitarshop.com</a><br>
-                        </div>
-                        <div class="col-2">
-                            {{ __('social_pages') }}
-                        </div>                    
-                    </div>
-                    <div class="row margined-row">
-                        <div class="col-6">
-                            {{ __('footer_name') }}<br>
-                            {{ __('address') }} : {{ __('detail_address') }}<br>
-                            {{ __('phone_number') }} : <a href="#">1800 1998</a><br>
-                            {{ __('hotline') }} : <a href="#">028710 120923</a><br>
-                            Email: <a href="#">info@guitarshop.com</a>
-                        </div>
-                        <div class="col-6">
-                            {{ __('payment_method') }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 @endsection

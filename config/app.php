@@ -15,14 +15,18 @@ return [
 
     'name' => env('APP_NAME', 'Guitar Shop'),
 
-    //Number of records per page
-
     'records_per_page' => env('RECORDS_PER_PAGE', 10),
     'records_recommended_guitar' => env('RECORDS_RECOMMENDED_GUITAR', 4),
     'records_acoustic_guitar' => env('RECORDS_ACOUSTIC_GUITAR', 4),
     'records_classic_guitar' => env('RECORDS_CLASSIC_GUITAR', 4),
     'acoustic_id' => env('ACOUSTIC_ID', 1),
     'classic_id' => env('CLASSIC_ID', 2),
+    'hotline' => env('HOTLINE', '1800 6715'),
+    'warranty_phone_number' => env('WARRANTY_PHONE_NUMBER', '028710 88 333'),
+    'timeserver' => env('TIME_SERVER', '8h-22h'),
+    'email' => env('EMAIL', 'info@guitarshop.com'),
+    'address_detail' => env('ADDRESS_DETAIL', '144 Xuan Thuy, Cau Giay, Ha Noi'),
+    'phone_number' => env('PHONE_NUMBER', '1800 1998'),   
     
     /*
     |--------------------------------------------------------------------------

@@ -103,5 +103,15 @@
     "continue_shopping" : "Continue shopping",
     "add_product_successfully" : "Add product successfully.",
     "cart_updated_successfully" : "Cart updated successfully.",
-    "product_removed_successfully" : "Product removed successfully."
+    "product_removed_successfully" : "Product removed successfully.",
+    "related_products" : "Related products",
+    "comments" : "Comments",
+    "rates" : "Rates",
+    "buy_now" : "Buy now",
+    "top_side" : "Top side",
+    "back_side" : "Back side",
+    "hip_side" : "Hip side",
+    "strings" : "Strings",
+    "neck" : "Neck",
+    "buckcle" : "Buckcle"
 }

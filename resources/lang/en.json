@@ -43,7 +43,6 @@
     "social_pages" : "SOCIAL PAGES",
     "footer_name" : "GUITAR SHOP COMPANY",
     "address" : "Address",
-    "detail_address" : "144 Xuan Thuy, Cau Giay, Ha Noi",
     "payment_method" : "PAYMENT METHODS",
     "categories" : "Product categories",
     "add_new_categories" : "Add new category",
@@ -96,5 +95,13 @@
     "guarentee" : "GUARENTEE",
     "efficiency_quality" : "Efficiency and quality",
     "agency" : "AGENCY",
-    "spread_throughout_Vietnam"  : "Spread throughout Vietnam"
+    "spread_throughout_Vietnam"  : "Spread throughout Vietnam",
+    "total" : "Total",
+    "subtotal" : "Subtotal",
+    "product" : "Product",
+    "quantity" : "Quantity",
+    "continue_shopping" : "Continue shopping",
+    "add_product_successfully" : "Add product successfully.",
+    "cart_updated_successfully" : "Cart updated successfully.",
+    "product_removed_successfully" : "Product removed successfully."
 }

@@ -16,6 +16,7 @@ class CategorySeeder extends Seeder
         $categories = [
             ['type' => 'Acoustic', 'description' => 'Dòng guitar Acoustic dùng chơi nhạc trẻ sẽ hay hơn.'],
             ['type' => 'Classic', 'description' => 'Dòng guitar Classic dùng chơi nhạc cổ điển sẽ hay hơn.'],
+            ['type' => 'Electric', 'description' => 'Dòng guitar Electric thích hợp dùng chơi nhạc Rock and Roll.'],
         ];
 
         DB::table('categories')->insert($categories);

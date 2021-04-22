@@ -30,6 +30,8 @@ Route::prefix('cart')->group(function () {
     Route::post('/add-product/{id}', 'HomeController@addProductToCart')->name('add_product_to_cart');
     Route::patch('/update-cart', 'HomeController@updateCart')->name('update_cart');
     Route::delete('/remove-from-cart/{id}/', 'HomeController@removeFromCart')->name('remove_from_cart');
+    Route::get('/buy-products', 'HomeController@buyProducts')->name('buy_products');
+    Route::post('/order', 'HomeController@order')->name('order');
 });
 
 Route::get('/view-product/{id}', 'HomeController@viewProductDetail')->name('view_product_detail');

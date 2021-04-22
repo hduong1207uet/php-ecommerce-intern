@@ -29,7 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        if (Auth::user()->role->id == config('app.admin_id')) {
+            return view('admin.home');
+        }
+
+        return redirect(route('home'));
     }
 
     /**
@@ -97,8 +101,6 @@ class HomeController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]['quantity'] = $request->quantity;
             session()->put('cart', $cart);
-
-            session()->flash('success', __('cart_updated_successfully'));
         }
         
         return abort(Response::HTTP_NOT_FOUND);

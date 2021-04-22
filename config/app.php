@@ -29,6 +29,7 @@ return [
     'phone_number' => env('PHONE_NUMBER', '1800 1998'),
     // 0 = haven't shipped yet, 1 = shipped
     'default_order_status' => 0,
+    'admin_id' => 1,   
     
     /*
     |--------------------------------------------------------------------------

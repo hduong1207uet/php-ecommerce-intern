@@ -1,33 +1,6 @@
 @extends('client.app')
 
 @section('home-content')
-    <!-- Menu -->
-    <div class="row top-menu">
-        <div class="container pl-0 pr-0">
-        <!-- Menu -->
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <ul class="nav navbar-nav my-menu text-uppercase">
-                        <li>{{ __('home') }}</li>
-                        <li>{{ __('acoustic_guitar') }}</li>
-                        <li>{{ __('classic_guitar') }}</li>
-                        <li>{{ __('electric_guitar') }}</li>
-                    </ul>
-                    <!-- Search box -->
-                    <form class="navbar-form" action ="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="{{ __('search') }}" name="search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="fab fa-searchengin fa-lg"></i>
-                                </button>    
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </div>
     <!-- Banner -->
     <div class="row banner-div">    
         <div id="carousel_banner_Indicators" class="carousel slide " data-ride="carousel">
@@ -139,7 +112,7 @@
                                                         @csrf                                                    
                                                         <button class="btn btn-primary btn_add_product_to_cart" data-id="{{ $recommededGuitar->id }}" type="button">{{ __('add_to_cart') }}</button>
                                                     </form>
-                                                    <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                    <a href="{{ route('view_product_detail', $recommededGuitar->id) }}" class="btn btn-danger">{{ __('view_details') }}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -185,7 +158,7 @@
                                                         @csrf                                                    
                                                         <button class="btn btn-primary btn_add_product_to_cart" data-id="{{ $acousticGuitar->id }}" type="button">{{ __('add_to_cart') }}</button>
                                                     </form>
-                                                    <a href="#" class="btn btn-danger">{{ __('view_details') }}</a>
+                                                    <a href="{{ route('view_product_detail', $acousticGuitar->id) }}" class="btn btn-danger">{{ __('view_details') }}</a>
                                                 </div>    
                                             </div>
                                         </div>
@@ -231,7 +204,7 @@
                                                         @csrf                                                    
                                                         <button class="btn btn-primary btn_add_product_to_cart" data-id="{{ $classicGuitar->id }}" type="button">{{ __('add_to_cart') }}</button>
                                                     </form>                                                                                       
-                                                    <a href="#" class="btn btn-danger" style="float:left">{{ __('view_details') }}</a>
+                                                    <a href="{{ route('view_product_detail', $classicGuitar->id) }}" class="btn btn-danger" style="float:left">{{ __('view_details') }}</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -32,6 +32,8 @@ Route::prefix('cart')->group(function () {
     Route::delete('/remove-from-cart/{id}/', 'HomeController@removeFromCart')->name('remove_from_cart');
 });
 
+Route::get('/view-product/{id}', 'HomeController@viewProductDetail')->name('view_product_detail');
+
 Route::get('lang/{lang}','LangController@changeLang')->name('lang');
 
 Route::get('/home', 'HomeController@index')->name('admin-home');

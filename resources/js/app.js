@@ -59,7 +59,7 @@ $(document).ready(function () {
         }
     });
 
-    //Confirm remove from cart
+    //Update cart
     $(".btn_update_cart").click(function (e) {
         e.preventDefault();
         let ele = $(this);
@@ -72,5 +72,25 @@ $(document).ready(function () {
                 quantity: ele.parents("tr").find(".quantity").val()
             }  
         });           
+    });
+    
+    //Increase or deacrease quantity
+    let quantitiy = 1;
+    $('.quantity-right-plus').click(function (e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        let quantity = parseInt($('#quantity').val());
+            $('#quantity').val(quantity + 1);
+    });
+
+    $('.quantity-left-minus').click(function (e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        let quantity = parseInt($('#quantity').val());
+            if (quantity > 0) {
+                $('#quantity').val(quantity - 1);
+            }
     });
 });

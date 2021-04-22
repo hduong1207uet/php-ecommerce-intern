@@ -95,7 +95,8 @@ class HomeController extends Controller
             
             session()->flash('success', __('cart_updated_successfully'));    
         }
-        abort(404);
+        
+        return abort(Response::HTTP_NOT_FOUND);
     }
 
     /**
@@ -114,6 +115,20 @@ class HomeController extends Controller
 
             return redirect()->route('cart')->with('success', __('product_removed_successfully'));    
         }
-        abort(404);
+
+        return abort(Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * Client - View product detail.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function viewProductDetail($id)
+    {
+        $product = Product::findOrFail($id);        
+        $related_products = Product::where('category_id', $product->category_id)->limit(config('app.related_product_records'))->get();
+        
+        return view('client.products.show', compact('product', 'related_products'));
     }
 }

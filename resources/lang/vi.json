@@ -102,5 +102,15 @@
     "continue_shopping" : "Tiếp tục mua hàng",
     "add_product_successfully" : "Thêm sản phẩm vào giỏ hàng thành công.",
     "cart_updated_successfully" : "Cập nhật giỏ hàng thành công.",
-    "product_removed_successfully" : "Xóa sản phẩm khỏi giỏ hàng thành công."
+    "product_removed_successfully" : "Xóa sản phẩm khỏi giỏ hàng thành công.",
+    "related_products" : "Sản phẩm liên quan",
+    "comments" : "Bình luận",
+    "rates" : "Đánh giá",
+    "buy_now" : "Mua ngay",
+    "top_side" : "Mặt trước",
+    "back_side" : "Mặt sau",
+    "hip_side" : "Mặt hông",
+    "strings" : "Dây đàn",
+    "neck" : "Cần đàn",
+    "buckcle" : "Khóa"
 }

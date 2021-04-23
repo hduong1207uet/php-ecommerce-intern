@@ -112,5 +112,13 @@
     "hip_side" : "Mặt hông",
     "strings" : "Dây đàn",
     "neck" : "Cần đàn",
-    "buckcle" : "Khóa"
+    "buckcle" : "Khóa",
+    "buy_products" : "Mua hàng",
+    "order" : "Đặt hàng",
+    "note_for_seller" : "Ghi chú cho người bán",
+    "enter_your_address" : "Nhập địa chỉ của bạn",
+    "enter_note_for_seller" : "Nhập ghi chú cho người bán",
+    "you_have_ordered_successfully" : "Bạn đã đặt hàng thành công!",
+    "order_failed_because_your_cart_is_empty" : "Đặt hàng không thành công, giỏ hàng của bạn đang trống.",
+    "order_failed" : "Đặt hàng không thành công."
 }

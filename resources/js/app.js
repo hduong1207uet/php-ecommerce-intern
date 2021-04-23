@@ -93,4 +93,13 @@ $(document).ready(function () {
                 $('#quantity').val(quantity - 1);
             }
     });
+
+    //Order button
+    $("#btn_order").on("click", function () {
+        if ($("#address_input").val() != "") {
+            $("#order_form").submit();
+        } else {        
+            $("#address_input").focus();
+        }
+    });
 });

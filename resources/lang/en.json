@@ -113,5 +113,13 @@
     "hip_side" : "Hip side",
     "strings" : "Strings",
     "neck" : "Neck",
-    "buckcle" : "Buckcle"
+    "buckcle" : "Buckcle",
+    "buy_products" : "Buy products",
+    "order" : "Order",
+    "note_for_seller" : "Note for seller",
+    "enter_your_address" : "Enter your address",
+    "enter_note_for_seller" : "Enter note for seller",
+    "you_have_ordered_successfully" : "You have ordered successfully!",
+    "order_failed_because_your_cart_is_empty" : "Order failed because your cart is empty",
+    "order_failed" : "Order failed."
 }

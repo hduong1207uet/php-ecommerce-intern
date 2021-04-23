@@ -26,7 +26,9 @@ return [
     'timeserver' => env('TIME_SERVER', '8h-22h'),
     'email' => env('EMAIL', 'info@guitarshop.com'),
     'address_detail' => env('ADDRESS_DETAIL', '144 Xuan Thuy, Cau Giay, Ha Noi'),
-    'phone_number' => env('PHONE_NUMBER', '1800 1998'),   
+    'phone_number' => env('PHONE_NUMBER', '1800 1998'),
+    // 0 = haven't shipped yet, 1 = shipped
+    'default_order_status' => 0,
     
     /*
     |--------------------------------------------------------------------------

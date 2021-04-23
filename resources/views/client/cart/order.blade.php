@@ -1,28 +1,31 @@
 @extends('layouts.app')
+
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-sm-12 mt-3">
-            @include('messages.alert')
-            @include('messages.error')
+            @include('messages.alert')  
         </div>
     </div>
+
     <table id="cart" class="table table-hover table-condensed">
         <thead>
             <tr>
                 <th class="th-50">{{ __('product') }}</th>
-                <th class="th-10">{{ __('price') }}</th>
                 <th class="th-15">{{ __('quantity') }}</th>
                 <th class="th-15 text-center">{{ __('subtotal') }}</th>
-                <th class="th-5"></th>
-                <th class="th-5"></th>
+                <th class="th-15"></th>
             </tr>
         </thead>
         <tbody>
-            <?php $total=0; ?>
+            @php
+                $total = 0; 
+            @endphp
             @if (session('cart'))
                 @foreach (session('cart') as $id => $details)
-                    <?php $total += $details['price'] * $details['quantity'] ?>
+                    @php
+                        $total += $details['price'] * $details['quantity'];
+                    @endphp
                     <tr>
                         <td data-th="Product">
                             <div class="row">
@@ -31,15 +34,11 @@
                                     <h5 class="nomargin">{{ $details['name'] }}</h5>
                                 </div>
                             </div>
-                        </td>
-                        <td data-th="Price">${{ $details['price'] }}</td>
+                        </td>                        
                         <td data-th="quantity">
-                            <input type="number" name="quantity" value="{{ $details['quantity'] }}" class="form-control quantity" />
+                            <input type="text" name="quantity" value="{{ $details['quantity'] }}" class="form-control quantity" readonly/>
                         </td>
-                        <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
-                        <td class="actions">                                                
-                            <button class="btn btn-info btn-sm btn_update_cart" type="button" data-csrf-token="{{ csrf_token() }}" data-url-target="{{ route('update_cart') }}" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>                        
-                        </td>
+                        <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>                        
                         <td>   
                             <form id="remove_from_cart_{{ $id }}" action="{{ route('remove_from_cart', $id) }}" method="post">
                                 @csrf
@@ -50,17 +49,27 @@
                     </tr>
                 @endforeach
             @endif
+            <form id="order_form" action="{{ route('order') }}" method="post">
+                @csrf
+                <tr>
+                    <td><b>{{ __('address') }}</b>: <input class="w-100 form-control" id="address_input" type="text" name="txt_address" placeholder="{{ __('enter_your_address') }}"></td>            
+                </tr>
+                <tr>
+                    <td><b>{{ __('note_for_seller') }}</b> : <textarea class="w-100 form-control" type="text-area" name="txt_note" placeholder="{{ __('enter_note_for_seller') }}"></textarea></td>
+                </tr>
+            </form>    
         </tbody>
         <tfoot>
             <tr class="visible-xs">
                 <td class="text-center"><strong>{{ __('total') }} {{ $total }} $</strong></td>
             </tr>
             <tr>
-                <td><a href="{{ route('home') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> {{ __('continue_shopping') }}</a></td>
-                <td colspan="2" class="hidden-xs"></td>            
-                <td><a href="{{ route('buy_products') }}" class="btn btn-primary">{{ __('buy_products') }} <i class="fa fa-angle-right"></i></a></td>          
+                <td><button class="btn btn_go_back btn-danger btn-lg"><i class="fa fa-angle-left"></i> {{ __('go_back') }}</button></td>         
+                <td>                                        
+                    <button id="btn_order" class="btn btn-primary btn-lg">{{ __('order') }} <i class="fa fa-angle-right"></i></button>
+                </td>
             </tr>
         </tfoot>
     </table>
-</div>    
+<div>
 @endsection

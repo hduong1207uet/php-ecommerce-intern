@@ -29,7 +29,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        $productIds = Product::select('id', 'name');
+        $productIds = Product::select('id', 'name')->get();
 
         return view('admin.images.create', compact('productIds'));
     }

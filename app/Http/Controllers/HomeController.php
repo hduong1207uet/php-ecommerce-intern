@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Http\Requests\OrderFormRequest;
+use Illuminate\Support\Facades\DB;
+use App\Models\Order;
+use App\Models\OrderDetail;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -92,8 +97,8 @@ class HomeController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]['quantity'] = $request->quantity;
             session()->put('cart', $cart);
-            
-            session()->flash('success', __('cart_updated_successfully'));    
+
+            session()->flash('success', __('cart_updated_successfully'));
         }
         
         return abort(Response::HTTP_NOT_FOUND);
@@ -130,5 +135,56 @@ class HomeController extends Controller
         $related_products = Product::where('category_id', $product->category_id)->limit(config('app.related_product_records'))->get();
         
         return view('client.products.show', compact('product', 'related_products'));
+    }
+
+    /**
+     * Buy product action
+     */
+    public function buyProducts()
+    {
+        if (session('cart') == NULL) {
+            return redirect(route('cart'))->with('error', __('order_failed_because_your_cart_is_empty'));
+        }
+        
+        return view('client.cart.order');
+    }
+
+    /**
+     * Order product
+     */
+    public function order(OrderFormRequest $request)
+    {                       
+        //begin transaction
+        DB::beginTransaction();
+        try {
+            $orderRecord = [
+                'user_id' => Auth::user()->id,
+                'status' => config('app.default_order_status'),
+                'ordered_date' => now(),
+                'description' => $request->txt_note,
+                'address' => $request->txt_address,  
+            ]; 
+            $order = Order::create($orderRecord);
+            
+            $orderDetails = [];
+            foreach (session('cart') as $id => $details) {
+            array_push($orderDetails, [
+                'order_id' => $order->id,
+                'product_id' => $id,
+                'quantities' => $details['quantity'],
+                'status' => config('app.default_order_status'),
+                ]);
+            }
+
+            OrderDetail::insert($orderDetails);
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollback();
+            
+            return redirect(route(cart))->with('error', __('order_failed'));
+        }
+        $request->session()->forget('cart');
+
+        return redirect(route('cart'))->with('success', __('you_have_ordered_successfully'));
     }
 }

@@ -15,6 +15,10 @@
     color: white;
 }
 
+.logo {
+    width: 20%;
+}
+
 #lang-btn {
     margin: 5px;
     width: 50px;
@@ -133,7 +137,7 @@
 
 .client-card {
     border : 1px solid silver !important;
-    width: 17.4rem !important;
+    width: 17rem !important;
     margin: 0;
 }
 
@@ -167,4 +171,14 @@
 
 .th-50 {
     width: 50%;
+}
+
+.no-margin-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.btn_add_product_to_cart {
+    margin-right: 10px;
+    margin-left :10px;
 }

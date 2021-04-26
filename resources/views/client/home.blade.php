@@ -65,17 +65,17 @@
                     </div>
                 </div>
                 <!-- Đại lý -->
-                <div class="policy-col">
+                <div class="policy-col">                    
                     <div class="col-md-4 policy-col-content p-0 m-0">
-                        <i class="fas fa-home icon-policy"></i>
+                        <i class="fab fa-cc-amazon-pay icon-policy"></i>
                     </div>
-                    <div class="col-md-8 policy-col-content icon-policy">
+                    <div class="col-md-8 policy-col-content">
                         <p>
                             <b>{{ __('agency') }}</b><br>
                             {{ __('spread_throughout_Vietnam') }}
                         </p>                                
                     </div>
-                </div>
+                </div>                
             </div>
 
             <!-- Recommended guitar -->
@@ -100,7 +100,7 @@
                         <div class="carousel-inner">
                             <!-- Recommended guitar- Page 1-->
                             <div class="carousel-item active">
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between no-margin-row">
                                     @foreach ($recommededGuitars as $recommededGuitar)
                                         <div class="card client-card">
                                             <img class="card-img-top" src="{{ asset('images_assets/products/' . $recommededGuitar->featured_img) }}" alt="Card image cap">
@@ -146,7 +146,7 @@
                         <div class="carousel-inner">
                             <!-- Recommended guitar- Page 1-->
                             <div class="carousel-item active">
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between no-margin-row">
                                     @foreach ($acousticGuitars as $acousticGuitar)
                                         <div class="card client-card">
                                             <img class="card-img-top" src="{{ asset('images_assets/products/' . $acousticGuitar->featured_img) }}" alt="Card image cap">
@@ -192,7 +192,7 @@
                         <div class="carousel-inner">
                             <!-- Recommended guitar- Page 1-->
                             <div class="carousel-item active">
-                                <div class="row justify-content-between">
+                                <div class="row justify-content-between no-margin-row">
                                     @foreach ($classicGuitars as $classicGuitar)
                                         <div class="card client-card">
                                             <img class="card-img-top" src="{{ asset('images_assets/products/' . $classicGuitar->featured_img) }}" alt="Card image cap">

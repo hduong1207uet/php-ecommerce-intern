@@ -65,4 +65,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Rate::class);
     }
+
+    /**
+     * Get the Role of User.
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

@@ -42,7 +42,8 @@ Route::get('/home', 'HomeController@index')->name('admin-home');
 
 Route::namespace('Admin')->group(function () {
     Route::get('/products/view-images/{id}', 'ImageController@viewImages')->name('products.view_images');
-    
+    Route::get('/products/view-details/{id}', 'ProductController@viewDetails')->name('products.view_details');
+
     Route::resources([
         'categories' => 'CategoryController',
         'products' => 'ProductController',

@@ -102,4 +102,41 @@ $(document).ready(function () {
             $("#address_input").focus();
         }
     });
+
+    //Read more    
+    var showChar = 500; 
+    var ellipsesText = "...";
+    var moreText = $(".show-more").html();
+    var lessText = $(".show-less").html();
+    
+
+    $('.more').each(function () {
+        var content = $(this).html();
+ 
+        if (content.length > showChar) {
+ 
+            let beforeText = content.substr(0, showChar);
+            let afterText = content.substr(showChar, content.length - showChar);
+ 
+            let html = `${beforeText}<span class="more-ellipses">${ellipsesText}&nbsp;</span><span class="more-content"><span>${afterText}<br></span><button class="btn btn-info more-link">${moreText}</button></span>`;
+ 
+            $(this).html(html);
+        }
+ 
+    });
+ 
+    $(".more-link").click(function () {
+        if ($(this).hasClass("less")) {
+            $(this).removeClass("less");
+            $(this).html(moreText);
+        } else {
+            $(this).addClass("less");
+            $(this).html(lessText);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+
+        return false;
+    });
+
 });

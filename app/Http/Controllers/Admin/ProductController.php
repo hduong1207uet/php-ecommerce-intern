@@ -106,4 +106,18 @@ class ProductController extends Controller
 
         return redirect(route('products.index'))->with('success', __('product_deleted'));
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function viewDetails($id)
+    {
+        $product = Product::findOrFail($id);        
+
+        return view('admin.products.details', compact('product'));
+    }
+
 }

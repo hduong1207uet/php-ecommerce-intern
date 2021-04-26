@@ -35,6 +35,16 @@ class ImageController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addImageToProduct($productId)
+    {        
+        return view('admin.images.create', compact('productId'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -53,7 +63,7 @@ class ImageController extends Controller
         }
         Image::insert($data);
 
-        return redirect(route('images.index'))->with('success', __('image_created'));
+        return redirect(route('products.view_details', $request->product_id))->with('success', __('image_created'));
     }
 
     /**
@@ -88,10 +98,9 @@ class ImageController extends Controller
      */
     public function edit($id)
     {
-        $image = Image::with('product:id')->findOrFail($id);
-        $productIds = Product::select('id', 'name')->get();
+        $image = Image::findOrFail($id);    
 
-        return view('admin.images.edit', compact('image', 'productIds'));
+        return view('admin.images.edit', compact('image'));
     }
 
     /**
@@ -111,7 +120,7 @@ class ImageController extends Controller
             'description' => $request->description,       
         ]);
 
-        return redirect(route('products.view_images', $id))->with('success', __('image_updated'));
+        return redirect(route('products.view_details', $request->product_id))->with('success', __('image_updated'));
     }
 
     /**
@@ -125,6 +134,6 @@ class ImageController extends Controller
         $image = Image::findOrFail($id);
         $image->delete();
 
-        return redirect(route('products.view_images', $id))->with('success', __('image_deleted'));  
+        return redirect(route('products.view_details', $image->product_id))->with('success', __('image_deleted'));  
     }
 }

@@ -124,5 +124,10 @@
     "order_failed" : "Order failed.",    
     "show_more" : "Show more",
     "show_less" : "Show less",
-    "images" : "Images"
+    "images" : "Images",
+    "add_new_comment" : "Add new comment",
+    "user" : "User",
+    "content" : "Content",
+    "comment_created" : "Comment created.",    
+    "comment_deleted" : "Comment deleted."    
 }

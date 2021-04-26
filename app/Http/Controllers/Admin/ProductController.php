@@ -115,9 +115,10 @@ class ProductController extends Controller
      */
     public function viewDetails($id)
     {
-        $product = Product::findOrFail($id);        
+        $product = Product::findOrFail($id)->load(['images' ,'comments.user']);
+        $images = $product->images()->paginate(config('app.records_per_page'));
+        $comments = $product->comments()->paginate(config('app.records_per_page')); 
 
-        return view('admin.products.details', compact('product'));
+        return view('admin.products.details', compact('product', 'images', 'comments'));
     }
-
 }

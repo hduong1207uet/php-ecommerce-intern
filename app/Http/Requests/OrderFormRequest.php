@@ -25,6 +25,7 @@ class OrderFormRequest extends FormRequest
     {
         return [
             'txt_address' => 'required|bail|min:3|max:1024',
+            'phone_number' => 'required|bail|min:10|max:11',
             'txt_note' => 'min:0|max:1024',
         ];
     }

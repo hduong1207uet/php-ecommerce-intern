@@ -163,6 +163,7 @@ class HomeController extends Controller
                 'user_id' => Auth::user()->id,
                 'status' => config('app.default_order_status'),
                 'ordered_date' => now(),
+                'phone_number' =>  $request->phone_number,
                 'description' => $request->txt_note,
                 'address' => $request->txt_address,  
             ]; 

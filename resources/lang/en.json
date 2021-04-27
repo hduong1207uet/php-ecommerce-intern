@@ -129,5 +129,6 @@
     "user" : "User",
     "content" : "Content",
     "comment_created" : "Comment created.",    
-    "comment_deleted" : "Comment deleted."    
+    "comment_deleted" : "Comment deleted.",    
+    "enter_your_phone_number" : "Enter your phone number"
 }

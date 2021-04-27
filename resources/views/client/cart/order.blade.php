@@ -52,6 +52,9 @@
             <form id="order_form" action="{{ route('order') }}" method="post">
                 @csrf
                 <tr>
+                    <td><b>{{ __('phone_number') }}</b>: <input class="w-100 form-control" id="phone_number" type="number" name="phone_number" placeholder="{{ __('enter_your_phone_number') }}" required></td>            
+                </tr>
+                <tr>
                     <td><b>{{ __('address') }}</b>: <input class="w-100 form-control" id="address_input" type="text" name="txt_address" placeholder="{{ __('enter_your_address') }}"></td>            
                 </tr>
                 <tr>

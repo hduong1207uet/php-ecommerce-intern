@@ -121,5 +121,8 @@
     "enter_note_for_seller" : "Enter note for seller",
     "you_have_ordered_successfully" : "You have ordered successfully!",
     "order_failed_because_your_cart_is_empty" : "Order failed because your cart is empty",
-    "order_failed" : "Order failed."
+    "order_failed" : "Order failed.",    
+    "show_more" : "Show more",
+    "show_less" : "Show less",
+    "images" : "Images"
 }

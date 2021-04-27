@@ -36,8 +36,10 @@
         </div>
 
         <div class="form-group">
-            <label for="description">{{ __('description') }}:</label>
-            <input type="text" class="form-control" name="description" value="{{ $product->description }}" required/>
+            <label for="description">{{ __('description') }}:
+            <textarea class="description-area" rows="8" cols="200" name="description">
+                {{ $product->description }}
+            </textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">{{ __('edit_product') }}</button>  

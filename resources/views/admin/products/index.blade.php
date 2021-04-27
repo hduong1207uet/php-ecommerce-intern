@@ -19,7 +19,7 @@
                     <td>{{ __('supplier') }}</td>
                     <td>{{ __('avg_rate') }}</td>
                     <td>{{ __('description') }}</td>
-                    <td colspan="5" align="center">{{ __('action') }}</td>
+                    <td colspan="3" align="center" class="th-15">{{ __('action') }}</td>
                 <tr>
             <thead>
             <tbody>
@@ -31,25 +31,23 @@
                     <td>{{ $product->category->type }}</td>
                     <td>{{ $product->supplier }}</td>
                     <td>{{ $product->avg_rate }} <i class="fas fa-star text-success"></i></td>
-                    <td>{{ $product->description }}</td>
+                    <td>                        
+                        <p class="more">{!! $product->description !!}</p>
+                        <p class="show-more-msg show-more">{{ __('show_more') }}</p>
+                        <p class="show-more-msg show-less">{{ __('show_less') }}</p>
+                    </td>
                     <td>
-                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm">{{ __('edit') }}
+                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i>
                     </td>
                     <td>
                         <form id="delete_product_{{ $product->id }}" action="{{ route('products.destroy', $product->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="button" data-id="{{ $product->id }}" data-delete_msg="{{ __('delete_msg') }}" class="btn_delete_product btn btn-danger btn-sm">{{ __('delete') }}</button>
+                            <button type="button" data-id="{{ $product->id }}" data-delete_msg="{{ __('delete_msg') }}" class="btn_delete_product btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                     <td>
-                        <a href="{{ route('products.view_images', $product->id) }}" class="btn btn-primary btn-sm">{{ __('view_images') }}</a>
-                    </td>
-                    <td>
-                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary btn-sm">{{ __('view_comments') }}</a>
-                    </td>
-                    <td>
-                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary btn-sm">{{ __('view_rates') }}</a>
+                        <a href="{{route('products.view_details', $product->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-info-circle"></i></a>
                     </td>
                 </tr>
                 @endforeach

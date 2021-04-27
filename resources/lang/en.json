@@ -130,5 +130,19 @@
     "content" : "Content",
     "comment_created" : "Comment created.",    
     "comment_deleted" : "Comment deleted.",    
-    "enter_your_phone_number" : "Enter your phone number"
+    "enter_your_phone_number" : "Enter your phone number",  
+    "user_name" : "Username",
+    "status" : "Status",
+    "order_date" : "Order date",
+    "not_shipped_yet" : "Not shipped yet",
+    "shipped" : "Shipped",
+    "orders" : "Orders",
+    "add_new_order" : "Add new order",
+    "edit_order" : "Edit order",
+    "ordered_date" : "Ordered date",
+    "order_created" : "Order created",
+    "order_updated" : "Order updated",
+    "order_deleted" : "Order deleted",
+    "failed_to_create_order" : "Failed to created order.",
+    "failed_to_update_order" : "Failed to update order."    
 }

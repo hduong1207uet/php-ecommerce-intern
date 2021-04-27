@@ -68,6 +68,16 @@ $(document).ready(function () {
             $('#delete_comment_' + comment_id).submit();
         }
     });
+         
+    //Confirm delete order
+    $(".btn_delete_order").on("click", function () {
+        let order_id = $(this).data('id');
+        let delete_msg =  $(this).data('delete_msg');
+        //Confirm delete action
+        if (confirm(delete_msg)) {
+            $('#delete_order_' + order_id).submit();
+        }
+    });
 
     //Update cart
     $(".btn_update_cart").click(function (e) {

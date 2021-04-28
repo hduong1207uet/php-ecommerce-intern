@@ -143,5 +143,9 @@
     "order_updated" : "Đã cập nhật đơn hàng",
     "order_deleted" : "Đã xóa đơn hàng",
     "failed_to_create_order" : "Tạo đơn hàng không thành công.",
-    "failed_to_update_order" : "Cập nhật đơn hàng không thành công."
+    "failed_to_update_order" : "Cập nhật đơn hàng không thành công.",
+    "post_comment" : "Gửi bình luận",
+    "like" : "Thích",
+    "reply" : "Phản hồi",
+    "show_child_comments" : "Xem các phản hồi"
 }

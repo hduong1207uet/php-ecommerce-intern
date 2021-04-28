@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Http\Requests\OrderFormRequest;
+use App\Http\Requests\CommentFormRequest;
+use App\Http\Requests\CommentReplyFormRequest;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 use App\Models\Order;
+use App\Models\Comment;
 use App\Models\OrderDetail;
 use Auth;
 
@@ -133,10 +136,11 @@ class HomeController extends Controller
      */
     public function viewProductDetail($id)
     {
-        $product = Product::findOrFail($id);        
-        $related_products = Product::where('category_id', $product->category_id)->limit(config('app.related_product_records'))->get();
-        
-        return view('client.products.show', compact('product', 'related_products'));
+        $product = Product::findOrFail($id);
+        $comments = $product->comments()->with(['user', 'replies.user'])->paginate(config('app.records_per_page'));            
+        $relatedProducts = Product::where('category_id', $product->category_id)->limit(config('app.related_product_records'))->get();
+            
+        return view('client.products.show', compact('product', 'relatedProducts', 'comments'));
     }
 
     /**
@@ -189,5 +193,37 @@ class HomeController extends Controller
         $request->session()->forget('cart');
 
         return redirect(route('cart'))->with('success', __('you_have_ordered_successfully'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeComment(CommentFormRequest $request)
+    {
+        try {
+            $comment = Comment::create($request->all());
+            $comment->load('user')->toArray();
+
+            return $comment;
+        } catch (Exception $e) {
+           return abort(Response::HTTP_NOT_FOUND);
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    public function loadComments(Request $request) {
+        $product = Product::findOrFail($request->product_id);        
+        $comments = $product->comments()->with('user', 'replies.user')->get();        
+        $comments = $comments->toArray();
+
+        return $comments;
     }
 }

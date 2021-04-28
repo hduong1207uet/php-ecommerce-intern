@@ -35,6 +35,8 @@ Route::prefix('cart')->group(function () {
 });
 
 Route::get('/view-product/{id}', 'HomeController@viewProductDetail')->name('view_product_detail');
+Route::post('/products/add-comments', 'HomeController@storeComment')->name('clients.store_comment');
+Route::post('/comments/store-reply', 'HomeController@storeReply')->name('clients.store_reply');
 
 Route::get('lang/{lang}','LangController@changeLang')->name('lang');
 

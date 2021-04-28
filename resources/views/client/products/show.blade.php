@@ -62,18 +62,18 @@
         <div class="row">
             <h2 class="text-center font-weight-bold mb-5 mt-1">{{ __('related_products') }}</h2>
             <div class="row d-flex equal">            
-                @foreach ($related_products as $related_product)
+                @foreach ($relatedProducts as $relatedProduct)
                     <div class="  col-md-3 mb-4">
                         <div class="card h-100 border-0">
                             <div class="card-img-top">
-                                <img src="{{ asset('images_assets/products/' . $related_product['featured_img']) }}" class="img-fluid mx-auto d-block img-thumbnail" alt="Card image cap">
+                                <img src="{{ asset('images_assets/products/' . $relatedProduct['featured_img']) }}" class="img-fluid mx-auto d-block img-thumbnail" alt="Card image cap">
                             </div>
                             <div class="card-body text-center">
                                 <h4 class="card-title">
-                                    <a href="{{ route('view_product_detail', $related_product['id']) }}" class="text-dark text-uppercase small"> {{ $related_product['name'] }}</a>
+                                    <a href="{{ route('view_product_detail', $relatedProduct['id']) }}" class="text-dark text-uppercase small"> {{ $relatedProduct['name'] }}</a>
                                 </h4>
                                 <h5 class="card-price small text-danger">
-                                    {{ $related_product['price'] }} $
+                                    {{ $relatedProduct['price'] }} $
                                 </h5>
                             </div>
                         </div>
@@ -82,6 +82,10 @@
             </div>
         </div><!-- End related product row-->
 		<hr>
+
+        <div class="row">
+            @include('client.products.comments')
+        </div>
     </div><!-- End container row-->
 </div>
 @endsection

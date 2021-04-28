@@ -30,4 +30,12 @@ class Comment extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    /**
+     * Get the Comment's replies
+     */
+    public function replies()
+    {
+        return $this->hasMany(Comment::class, 'parent_comment_id');
+    }
 }

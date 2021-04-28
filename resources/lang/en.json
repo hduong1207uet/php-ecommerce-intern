@@ -144,5 +144,9 @@
     "order_updated" : "Order updated",
     "order_deleted" : "Order deleted",
     "failed_to_create_order" : "Failed to created order.",
-    "failed_to_update_order" : "Failed to update order."    
+    "failed_to_update_order" : "Failed to update order.",
+    "post_comment" : "Post comment",
+    "like" : "like",
+    "reply" : "reply",
+    "show_child_comments" : "show child comments"
 }

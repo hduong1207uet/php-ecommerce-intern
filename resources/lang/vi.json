@@ -143,5 +143,17 @@
     "order_updated" : "Đã cập nhật đơn hàng",
     "order_deleted" : "Đã xóa đơn hàng",
     "failed_to_create_order" : "Tạo đơn hàng không thành công.",
-    "failed_to_update_order" : "Cập nhật đơn hàng không thành công."
+    "failed_to_update_order" : "Cập nhật đơn hàng không thành công.",
+    "order_detail" : "Chi tiết đơn hàng",
+    "add_new_order_detail" : "Thêm mới đơn hàng chi tiết",
+    "order_id" : "Mã đơn hàng",
+    "required_date" : "Ngày yêu cầu giao hàng",
+    "shipped_date" : "Ngày giao hàng",
+    "quantities" : "Số lượng",
+    "edit_order_detail" : "Sửa chi tiết đơn hàng",
+    "order_detail_created" : "Đã tạo mới đơn hàng chi tiết",
+    "order_detail_updated" : "Đã sửa đơn hàng chi tiết",
+    "order_detail_deleted" : "Đã xóa đơn hàng chi tiết",
+    "failed_to_create_order_detail" : "Tạo mới chi tiết đơn hàng không thành công",
+    "failed_to_update_order_detail" : "Cập nhật chi tiets đơn hàng không thành công"
 }

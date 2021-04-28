@@ -79,6 +79,16 @@ $(document).ready(function () {
         }
     });
 
+    //Confirm delete order detail
+    $(".btn_delete_order_detail").on("click", function () {
+        let order_detail_id = $(this).data('id');
+        let delete_msg =  $(this).data('delete_msg');
+        //Confirm delete action
+        if (confirm(delete_msg)) {
+            $('#delete_order_detail_' + order_detail_id).submit();
+        }
+    });
+
     //Update cart
     $(".btn_update_cart").click(function (e) {
         e.preventDefault();

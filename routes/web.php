@@ -46,6 +46,7 @@ Route::namespace('Admin')->group(function () {
     Route::get('/products/{id}/add-images', 'ImageController@createImage')->name('products.add_images');
     Route::get('/products/{id}/add-comment', 'CommentController@createComment')->name('products.add_comment');
     Route::get('/orders/{id}/view-details', 'OrderController@viewDetails')->name('orders.view_details');
+    Route::get('/order/{id}/create-detail', 'OrderDetailController@createDetail')->name('orders.create_detail');    
 
     Route::resources([
         'categories' => 'CategoryController',
@@ -53,5 +54,6 @@ Route::namespace('Admin')->group(function () {
         'images' => 'ImageController',
         'comments' => 'CommentController',
         'orders' => 'OrderController',
+        'order-details' => 'OrderDetailController',
     ]);
 });

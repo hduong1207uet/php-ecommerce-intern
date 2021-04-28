@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin_OrderFormRequest;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\User;
 
 class OrderController extends Controller
@@ -126,6 +127,9 @@ class OrderController extends Controller
      */
     public function viewDetails($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order_details = $order->orderDetails()->with('product')->paginate(config('app.records_per_page'));        
+
+        return view('admin.order-details.index', compact('order', 'order_details'));
     }
 }

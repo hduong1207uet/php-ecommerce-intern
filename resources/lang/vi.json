@@ -129,5 +129,19 @@
     "content" : "Nội dung",
     "comment_created" : "Bình luận được tạo thành công.",    
     "comment_deleted" : "Bình luận đã được xóa thành công.",
-    "enter_your_phone_number" : "Hãy nhập số điện thoại của bạn"
+    "enter_your_phone_number" : "Hãy nhập số điện thoại của bạn",   
+    "user_name" : "Tên người dùng",
+    "status" : "Trạng thái",
+    "order_date" : "Ngày đặt hàng",
+    "not_shipped_yet" : "Chưa được giao",
+    "shipped" : "Đã giao",
+    "orders" : "Đơn hàng",
+    "add_new_order" : "Thêm đơn hàng mới",
+    "edit_order" : "Sửa đơn hàng",
+    "ordered_date" : "Ngày yêu cầu giao hàng",
+    "order_created" : "Đã thêm đơn hàng",
+    "order_updated" : "Đã cập nhật đơn hàng",
+    "order_deleted" : "Đã xóa đơn hàng",
+    "failed_to_create_order" : "Tạo đơn hàng không thành công.",
+    "failed_to_update_order" : "Cập nhật đơn hàng không thành công."
 }

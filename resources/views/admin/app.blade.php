@@ -72,31 +72,23 @@
                     <i class="fas fa-user fa-lg"></i> &emsp;{{ __('user_management') }}
                 </div>
 
-                <a href="{{ route('products.index') }}">
+                <a class="no-decoration" href="{{ route('products.index') }}">
                     <div class="row side-bar-row">
                         <i class="fas fa-guitar fa-lg"></i> &emsp;{{ __('product_management') }}
                     </div>
                 </a>
 
-                <div class="row side-bar-row">
-                    <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('order_management') }}
-                </div>
-                <div class="row side-bar-row">
-                    <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('order_detail_management') }}
-                </div>
+                <a class="no-decoration" href="{{ route('orders.index') }}">
+                    <div class="row side-bar-row">
+                        <i class="fab fa-first-order fa-lg"></i> &emsp;{{ __('order_management') }}
+                    </div>
+                </a>              
 
-                <a href="{{ route('categories.index') }}">
+                <a class="no-decoration" href="{{ route('categories.index') }}">
                     <div class="row side-bar-row">
                         <i class="fas fa-archive fa-lg"></i> &emsp;{{ __('category_management') }}
                     </div>
-                </a>
-
-                <div class="row side-bar-row">
-                    <i class="far fa-comments fa-lg"></i> &emsp;{{ __('comment_management') }}
-                </div>
-                <div class="row side-bar-row">
-                    <i class="far fa-star fa-lg"></i> &emsp;{{ __('rate_management') }}
-                </div>
+                </a>                
             </div>
             <div class="col-md-10 right-sidebar overflow-auto">
                     @yield('admin-content')

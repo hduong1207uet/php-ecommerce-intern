@@ -15,9 +15,13 @@
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-images" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-            <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-            <div class="tab-pane fade" id="nav-rates" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+            <div class="tab-pane fade show active" id="nav-images" role="tabpanel" aria-labelledby="nav-image-tab">
+                @include('admin.images.index')
+            </div>
+            <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-comments-tab">
+                @include('admin.comments.index')
+            </div>
+            <div class="tab-pane fade" id="nav-rates" role="tabpanel" aria-labelledby="nav-rates-tab">...</div>
         </div>
     </div>
 </div>

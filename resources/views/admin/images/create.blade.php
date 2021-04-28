@@ -16,12 +16,7 @@
         </div>
 
         <div class="form-group">
-            <label for="product_id">{{ __('product_name') }}:</label>
-            <select class="group_select" name="product_id">
-                @foreach ($productIds as $productId)
-                    <option value="{{ $productId->id }}"> {{ $productId->name }} </option>
-                @endforeach
-            </select>
+            <input type="hidden" name="product_id" value="{{ $productId }}">
         </div>
 
         <div class="form-group">

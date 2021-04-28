@@ -6,8 +6,8 @@
         <h1>{{ __('edit_image') }}</h1>
     <div>
     <!--Display errors-->
-    @include('messages.error')
-    <!--Edit post form-->
+        @include('messages.error')
+    <!--Edit image form-->
     <form method="post" action="{{ route('images.update', $image->id) }}">
         @csrf
         @method('PATCH')
@@ -17,12 +17,7 @@
         </div>
 
         <div class="form-group">
-            <label for="product_id">{{ __('product_name') }}:</label>
-            <select class="group_select" name="product_id">
-                @foreach ($productIds as $productId)
-                    <option value="{{ $productId->id }}" {{ ($image->product->id == $productId->id) ? 'selected' : '' }}> {{ $productId->name }} </option>
-                @endforeach
-            </select>
+            <input type="hidden" name="product_id" value="{{ $image->product_id }}">
         </div>
 
         <div class="form-group">

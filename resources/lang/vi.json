@@ -123,5 +123,10 @@
     "order_failed" : "Đặt hàng không thành công.",
     "show_more" : "Xem thêm",
     "show_less" : "Ẩn bớt",
-    "images" : "Ảnh sản phẩm"
+    "images" : "Ảnh sản phẩm",
+    "add_new_comment" : "Thêm bình luận mới",
+    "user" : "Người dùng",
+    "content" : "Nội dung",
+    "comment_created" : "Bình luận được tạo thành công.",    
+    "comment_deleted" : "Bình luận đã được xóa thành công."    
 }

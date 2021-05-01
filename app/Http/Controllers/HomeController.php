@@ -137,9 +137,11 @@ class HomeController extends Controller
     public function viewProductDetail($id)
     {
         $product = Product::findOrFail($id);
-        $comments = $product->comments()->with(['user', 'replies.user'])->paginate(config('app.records_per_page')); ;            
+        $comments = $product->comments()->with(['user', 'replies.user'])->paginate(config('app.records_per_page'));            
         $relatedProducts = Product::where('category_id', $product->category_id)->limit(config('app.related_product_records'))->get();
-        
+        $lastReply = Comment::orderBy('id', 'DESC')->with('user', 'replies.user')->where('parent_comment_id', 2)->first();
+            $lastReply = $lastReply->toArray();
+            
         return view('client.products.show', compact('product', 'relatedProducts', 'comments'));
     }
 
@@ -205,8 +207,10 @@ class HomeController extends Controller
     {
         try {
             Comment::create($request->all());
+            $lastRecord = Comment::orderBy('id', 'DESC')->with('user', 'replies.user')->first();
+            $lastRecord = $lastRecord->toArray();
 
-            return redirect(route('view_product_detail', $request->product_id));
+            return $lastRecord;
         } catch (Exception $e) {
            return abort(Response::HTTP_NOT_FOUND);
         }
@@ -222,10 +226,20 @@ class HomeController extends Controller
     {
         try {
             Comment::create($request->all());
+            $lastReply = Comment::orderBy('id', 'DESC')->with('user', 'replies.user')->where('parent_comment_id', $request->parent_comment_id)->first();
+            $lastReply = $lastReply->toArray();
 
-            return redirect(route('view_product_detail', $request->product_id));
+            return $lastReply;
         } catch (Exception $e) {
-           return abort(Response::HTTP_NOT_FOUND);
+            return abort(Response::HTTP_NOT_FOUND);
         }     
+    }
+
+    public function loadComments(Request $request) {
+        $product = Product::findOrFail($request->product_id);        
+        $comments = $product->comments()->with('user', 'replies.user')->get();        
+        $comments = $comments->toArray();
+
+        return $comments;
     }
 }

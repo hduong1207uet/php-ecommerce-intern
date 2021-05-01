@@ -117,8 +117,8 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id)->load(['images' ,'comments.user']);
         $images = $product->images()->paginate(config('app.records_per_page'));
-        $comments = $product->comments()->paginate(config('app.records_per_page')); 
+        $this->loadComments($id);
 
-        return view('admin.products.details', compact('product', 'images', 'comments'));
+        return view('admin.products.details', compact('product', 'images'));
     }
 }

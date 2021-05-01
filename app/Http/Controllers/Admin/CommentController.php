@@ -29,8 +29,9 @@ class CommentController extends Controller
     public function store(CommentFormRequest $request)
     {
         Comment::create($request->all());
-
-        return redirect(route('products.view_details', $request->product_id))->with('success', __('comment_created'));
+        $product = Product::findOrFail($request->product_id);
+        $comments = $product->comments()->with(['user', 'replies.user'])->paginate(config('app.records_per_page'));
+        return compact('comments');
     }    
 
     /**

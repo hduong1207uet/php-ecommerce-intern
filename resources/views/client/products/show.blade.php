@@ -1,13 +1,14 @@
 @extends('client.app')
 
 @section('home-content')
+
 <div class="row">
     <div class="container p-0">
         <div class="row mb-3 mt-3">
             <div class="col-4">
 			    <img src="{{ asset('images_assets/products/' . $product['featured_img']) }}" class="img-fluid mx-auto d-block img-thumbnail" alt="Card image cap">
             </div>
-            <div class="col-8">
+            <div class="col-8">                
                 <h5 class="mb-3">{{ $product->name }}</h5>                                    
                     <p><span class="mr-1 text-danger"><strong>${{ $product->price }}</strong></span></p>
                     <p class="pt-1">
@@ -88,4 +89,6 @@
         </div>
     </div><!-- End container row-->
 </div>
+
+<script src="{{ asset('js/client_show_product_detail.js') }}" defer></script>
 @endsection

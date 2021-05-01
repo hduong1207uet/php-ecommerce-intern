@@ -157,12 +157,6 @@ $(document).ready(function () {
         $(this).prev().toggle();
 
         return false;
-    });
-
-    //submit comment reply
-    $(".btn_submit_reply").on("click", function () {
-        let comment_id = $(this).data('id');
-        $('#reply_comment_' + comment_id).submit();
-    });
+    });    
 
 });

@@ -45,8 +45,16 @@ Route::namespace('Admin')->group(function () {
     Route::get('/products/view-details/{id}', 'ProductController@viewDetails')->name('products.view_details');
     Route::get('/products/{id}/add-images', 'ImageController@createImage')->name('products.add_images');
     Route::get('/products/{id}/add-comment', 'CommentController@createComment')->name('products.add_comment');
-    Route::get('/orders/{id}/view-details', 'OrderController@viewDetails')->name('orders.view_details');
-    Route::get('/order/{id}/create-detail', 'OrderDetailController@createDetail')->name('orders.create_detail');    
+    Route::get('/orders/{id}/view-details', 'OrderController@viewDetails')->name('orders.view_details');   
+
+    // Fix order
+    Route::post('orders/load-orders', 'OrderController@loadOrders');
+    Route::post('orders/{id}/approve', 'OrderController@approve')->name('orders.approve');
+    Route::post('orders/{id}/deny', 'OrderController@deny')->name('orders.deny');
+    Route::post('orders/approve', 'OrderController@approve');
+    Route::post('orders/deny', 'OrderController@deny');
+
+    Route::get('/test', 'OrderController@testModel')->name('test');
 
     Route::resources([
         'categories' => 'CategoryController',

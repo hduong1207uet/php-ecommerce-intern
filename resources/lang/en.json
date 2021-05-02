@@ -156,5 +156,8 @@
     "order_detail_updated" : "Order detail updated",
     "order_detail_deleted" : "Order detail deleted",
     "failed_to_create_order_detail" : "Failed to create order detail",
-    "failed_to_update_order_detail" : "Failed to update order detail"   
+    "failed_to_update_order_detail" : "Failed to update order detail",
+    "pending" : "Pending",
+    "approved" : "Approved",
+    "denied" : "Denied"  
 }

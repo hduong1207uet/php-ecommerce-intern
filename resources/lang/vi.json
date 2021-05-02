@@ -155,5 +155,8 @@
     "order_detail_updated" : "Đã sửa đơn hàng chi tiết",
     "order_detail_deleted" : "Đã xóa đơn hàng chi tiết",
     "failed_to_create_order_detail" : "Tạo mới chi tiết đơn hàng không thành công",
-    "failed_to_update_order_detail" : "Cập nhật chi tiets đơn hàng không thành công"
+    "failed_to_update_order_detail" : "Cập nhật chi tiets đơn hàng không thành công",
+    "pending" : "Đang chờ",
+    "approved" : "Đã xác nhận",
+    "denied" : "Đã từ chối" 
 }

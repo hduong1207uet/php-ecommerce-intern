@@ -132,4 +132,40 @@ class OrderController extends Controller
 
         return view('admin.order-details.index', compact('order', 'order_details'));
     }
+
+    public function loadOrders(Request $request) {
+        $orders = Order::all()->load('user');
+        $orders = $orders->toArray();
+        
+        return $orders;
+    }
+
+    public function approve(Request $request) {
+        Order::findOrFail($request->orderId)->update([
+            'status' => config('app.approved_order_id'),
+        ]);
+        
+        $order = Order::findOrFail($request->orderId)->load('user')->toArray();
+        
+        return $order;
+    }
+
+    public function deny(Request $request) {
+        Order::findOrFail($request->orderId)->update([
+            'status' => config('app.denied_order_id'),
+        ]);
+        
+        $order = Order::findOrFail($request->orderId)->load('user')->toArray();
+        
+        return $order;
+    }
+
+    public function testModel(){
+        Order::findOrFail(6)
+            ->update(['status' => config('app.approved_order_id')]);
+        
+        $order = Order::findOrFail(6)->load('user')->toArray();
+        
+        dd($order);
+    }
 }

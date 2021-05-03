@@ -190,4 +190,14 @@ class HomeController extends Controller
 
         return redirect(route('cart'))->with('success', __('you_have_ordered_successfully'));
     }
+
+    public function updateCartQuantity(Request $request)
+    {
+        $cart = session()->get('cart');
+        if ($request->product_id && $request->new_quantity) {
+            $cart[$request->product_id]['quantity'] = $request->new_quantity;
+            session()->put('cart', $cart);
+        }
+        return $cart[$request->product_id];
+    }
 }

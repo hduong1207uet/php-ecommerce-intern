@@ -32,6 +32,9 @@ Route::prefix('cart')->group(function () {
     Route::delete('/remove-from-cart/{id}/', 'HomeController@removeFromCart')->name('remove_from_cart');
     Route::get('/buy-products', 'HomeController@buyProducts')->name('buy_products');
     Route::post('/order', 'HomeController@order')->name('order');
+
+    //Fix cart
+    Route::post('/update-quantity', 'HomeController@updateCartQuantity');
 });
 
 Route::get('/view-product/{id}', 'HomeController@viewProductDetail')->name('view_product_detail');

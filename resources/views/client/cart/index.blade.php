@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php $total=0; ?>
+            <?php $total = 0; ?>
             @if (session('cart'))
                 @foreach (session('cart') as $id => $details)
                     <?php $total += $details['price'] * $details['quantity'] ?>
@@ -34,11 +34,13 @@
                         </td>
                         <td data-th="Price">${{ $details['price'] }}</td>
                         <td data-th="quantity">
-                            <input type="number" name="quantity" value="{{ $details['quantity'] }}" class="form-control quantity" />
+                            <input type="number" name="quantity" initial-quantity="{{ $details['quantity'] }}" id="cart_quantity_{{ $id }}" data-id="{{ $id }}" value="{{ $details['quantity'] }}" class="cart_quantity form-control quantity" />
                         </td>
-                        <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+                        <td data-th="Subtotal" class="text-center" >
+                            $<p id="sub_total_{{ $id }}">{{ $details['price'] * $details['quantity'] }}</p>
+                        </td>
                         <td class="actions">                                                
-                            <button class="btn btn-info btn-sm btn_update_cart" type="button" data-csrf-token="{{ csrf_token() }}" data-url-target="{{ route('update_cart') }}" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>                        
+                            <button class="btn btn-info btn-sm btn_update_cart" type="button" data-csrf-token="{{ csrf_token() }}" data-id="{{ $id }}"><i class="fas fa-sync-alt"></i></button>                        
                         </td>
                         <td>   
                             <form id="remove_from_cart_{{ $id }}" action="{{ route('remove_from_cart', $id) }}" method="post">
@@ -53,7 +55,7 @@
         </tbody>
         <tfoot>
             <tr class="visible-xs">
-                <td class="text-center"><strong>{{ __('total') }} {{ $total }} $</strong></td>
+                <td class="text-center"><strong>{{ __('total') }} $ <p id="order_total">{{ $total }}</p></strong></td>
             </tr>
             <tr>
                 <td><a href="{{ route('home') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> {{ __('continue_shopping') }}</a></td>
@@ -62,5 +64,6 @@
             </tr>
         </tfoot>
     </table>
-</div>    
+</div>
+<script src="{{ asset('js/client-cart.js') }}" defer></script>    
 @endsection

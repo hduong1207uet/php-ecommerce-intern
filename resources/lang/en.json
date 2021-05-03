@@ -163,5 +163,6 @@
     "failed_to_update_order_detail" : "Failed to update order detail",
     "pending" : "Pending",
     "approved" : "Approved",
-    "denied" : "Denied"  
+    "denied" : "Denied",
+    "product_left" : "products left"  
 }

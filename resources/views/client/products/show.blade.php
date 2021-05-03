@@ -19,24 +19,35 @@
                         <h6><b>{{ __('neck') }}</b> : {{ $product->neck}}</h6>
                         <h6><b>{{ __('buckcle') }}</b> : {{ $product->buckcle}}</h6>
                     </p>
-                    <hr>               
-                    <div class="table-responsive mb-3">
-                        <div class="input-group w-25">
-                            <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
-                                    <span><i class="fas fa-minus"></i></span>
-                                </button>
-                            </span>
-                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-                            <span class="input-group-btn">
-                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
-                                    <span><i class="fas fa-plus"></i></span>
-                                </button>
-                            </span>
+                    <hr>
+                    <span class="input-group-btn">
+                        <p>{!! '<b class="text-primary">'.$product->quantity_in_stock. '</b> '. __('product_left') !!}</p>
+                    </span>
+                    @if ($product->quantity_in_stock > 0)               
+                        <div class="table-responsive mb-3">
+                            <div class="input-group w-25">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" max-val="{{ $product->quantity_in_stock }}">
+                                        <span><i class="fas fa-minus"></i></span>
+                                    </button>
+                                </span>                            
+                                <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min=1 max="{{ $product->quantity_in_stock }}">
+                                <span class="input-group-btn">
+                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" max-val="{{ $product->quantity_in_stock }}">
+                                        <span><i class="fas fa-plus"></i></span>
+                                    </button>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-primary btn-md mr-1 mb-2">{{ __('buy_now') }}</button>
-                    <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>{{ __('add_to_cart') }}</button>
+                        
+                        <form id="buy_now_{{ $product->id }}" class="btn btn-lg pl-0" action="{{ route('client.buy_now', $product->id) }}" method="post">
+                            @csrf
+                            <button data-id="{{ $product->id }}" class="btn_buy_now btn btn-primary btn-md mr-1 mb-2">{{ __('buy_now') }}</button>
+                        </form>
+                        <form id="add_products_to_cart_{{ $product->id }}" class="btn btn-lg pl-0"  method="post">                                          
+                            <button data-id="{{ $product->id }}" class="btn_add_products_to_cart btn btn-success btn-md mr-1 mb-2"><i class="fas fa-shopping-cart pr-2"></i>{{ __('add_to_cart') }}</button>
+                        </form>    
+                    @endif
             </div>
         </div>    
         <div class="row">
@@ -91,4 +102,5 @@
 </div>
 
 <script src="{{ asset('js/client_show_product_detail.js') }}" defer></script>
+<script src="{{ asset('js/client-cart.js') }}" defer></script> 
 @endsection

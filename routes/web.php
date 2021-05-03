@@ -35,12 +35,18 @@ Route::prefix('cart')->group(function () {
     Route::delete('/remove-from-cart/{id}/', 'HomeController@removeFromCart')->name('remove_from_cart');
     Route::get('/buy-products', 'HomeController@buyProducts')->name('buy_products');
     Route::post('/order', 'HomeController@order')->name('order');
+
+    //Fix cart
+    Route::post('/update-quantity', 'HomeController@updateCartQuantity');
 });
 
 Route::prefix('products')->group(function () {
     Route::get('/load-comments', 'HomeController@loadComments')->name('clients.load_comments');
     Route::post('/store-comment', 'HomeController@storeComment')->name('clients.store_comment');
+    Route::post('/{id}/buy-now', 'HomeController@buyNow')->name('client.buy_now');
+    Route::post('/add-to-cart', 'HomeController@addProductsToCart')->name('client.add_products_to_cart');
 });
+
 
 Route::namespace('Admin')->group(function () {
     Route::get('/products/view-images/{id}', 'ImageController@viewImages')->name('products.view_images');

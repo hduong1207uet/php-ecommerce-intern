@@ -162,5 +162,6 @@
     "failed_to_update_order_detail" : "Cập nhật chi tiets đơn hàng không thành công",
     "pending" : "Đang chờ",
     "approved" : "Đã xác nhận",
-    "denied" : "Đã từ chối" 
+    "denied" : "Đã từ chối",
+    "product_left" : "sản phẩm còn lại"
 }

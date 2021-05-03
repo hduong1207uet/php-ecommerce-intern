@@ -46,7 +46,9 @@ class HomeController extends Controller
      */
     public function viewCart()
     {
-        return view('client.cart.index');
+        $productQuantity = Product::pluck('quantity_in_stock', 'id');
+                
+        return view('client.cart.index', compact('productQuantity'));
     }
 
     /**
@@ -225,5 +227,91 @@ class HomeController extends Controller
         $comments = $comments->toArray();
 
         return $comments;
+    }
+    
+    public function updateCartQuantity(Request $request)
+    {
+        $cart = session()->get('cart');
+        if ($request->product_id && $request->new_quantity) {
+            $cart[$request->product_id]['quantity'] = $request->new_quantity;
+            session()->put('cart', $cart);
+        }
+        return $cart[$request->product_id];
+    }
+
+    //
+    public function buyNow($id) {
+        $product = Product::findOrFail($id);
+        $cart = session()->get('cart');
+
+        // if cart is empty then this the first product
+        if (!$cart) {
+            $cart = [
+                $id => [
+                    "name" => $product->name,
+                    "quantity" => 1,
+                    "price" => $product->price,
+                    "featured_img" => $product->featured_img,                        
+                ],
+            ];
+            session()->put('cart', $cart);
+
+            return redirect(route('cart'));
+        }
+        // if cart not empty then check if this product exist then increase quantity
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+            session()->put('cart', $cart);
+
+            return redirect(route('cart'));
+        }
+        // if item not exist in cart then add to cart with quantity = 1
+        $cart[$id] = [
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price,
+            "featured_img" => $product->featured_img,            
+        ];
+        session()->put('cart', $cart);
+
+        return redirect(route('cart'));
+    }
+    
+    //Add product to Cart with quantity
+    public function addProductsToCart(Request $request) {
+        $product = Product::findOrFail($request->product_id);
+        $cart = session()->get('cart');
+
+        // if cart is empty then this the first product
+        if (!$cart) {
+            $cart = [
+                $request->product_id => [
+                    "name" => $product->name,
+                    "quantity" => $request->quantity,
+                    "price" => $product->price,
+                    "featured_img" => $product->featured_img,                        
+                ],
+            ];
+            session()->put('cart', $cart);
+
+            return;
+        }
+        // if cart not empty then check if this product exist then increase quantity
+        if (isset($cart[$request->product_id])) {
+            $cart[$request->product_id]['quantity'] += $request->quantity;
+            session()->put('cart', $cart);
+
+            return;
+        }
+        // if item not exist in cart then add to cart with quantity = 1
+        $cart[$request->product_id] = [
+            "name" => $product->name,
+            "quantity" => $request->quantity,
+            "price" => $product->price,
+            "featured_img" => $product->featured_img,            
+        ];
+        session()->put('cart', $cart);
+
+        return;
     }
 }

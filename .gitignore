@@ -5,6 +5,9 @@
 /public/images_assets/products
 /public/css
 /public/js
+/storage/framework
+/storage/logs
+/storage/debugbar
 /storage/*.key
 /vendor
 .env

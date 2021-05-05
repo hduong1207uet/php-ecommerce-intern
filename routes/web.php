@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', ClientController::class)->name('home');
+Route::get('/home', 'HomeController@index')->name('admin-home');
+Route::get('/view-product/{id}', 'HomeController@viewProductDetail')->name('view_product_detail');
+Route::get('lang/{lang}','LangController@changeLang')->name('lang');
 
 Route::namespace('Auth')->group(function () {
     // Authentication Routes...
@@ -34,11 +37,10 @@ Route::prefix('cart')->group(function () {
     Route::post('/order', 'HomeController@order')->name('order');
 });
 
-Route::get('/view-product/{id}', 'HomeController@viewProductDetail')->name('view_product_detail');
-
-Route::get('lang/{lang}','LangController@changeLang')->name('lang');
-
-Route::get('/home', 'HomeController@index')->name('admin-home');
+Route::prefix('products')->group(function () {
+    Route::get('/load-comments', 'HomeController@loadComments')->name('clients.load_comments');
+    Route::post('/store-comment', 'HomeController@storeComment')->name('clients.store_comment');
+});
 
 Route::namespace('Admin')->group(function () {
     Route::get('/products/view-images/{id}', 'ImageController@viewImages')->name('products.view_images');

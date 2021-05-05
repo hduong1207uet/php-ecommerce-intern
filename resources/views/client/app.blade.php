@@ -31,7 +31,7 @@
     @yield('home-content')
 
     @section('footer')    
-        <div class="row mb-5">
+        <div class="row mb-5 border-top">
             <div class="container-fluid my-footer margined-row ">
                 <div class="container">
                     <div class="row">

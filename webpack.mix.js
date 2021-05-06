@@ -13,4 +13,5 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/client_show_product_detail.js', 'public/js')
+     .js('resources/js/orders.js', 'public/js')
      .sass('resources/sass/app.scss', 'public/css');

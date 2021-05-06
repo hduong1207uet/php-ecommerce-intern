@@ -11,7 +11,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}" defer></script>
 
     <!-- Boostrap -->    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

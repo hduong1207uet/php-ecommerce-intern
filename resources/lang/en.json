@@ -148,5 +148,20 @@
     "post_comment" : "Post comment",
     "like" : "like",
     "reply" : "reply",
-    "show_child_comments" : "show child comments"
+    "show_child_comments" : "show child comments",
+    "order_detail" : "Order details",
+    "add_new_order_detail" : "Add new order detail" ,
+    "order_id" : "Order ID",
+    "required_date" : "Required date",
+    "shipped_date" : "Shipped date",
+    "quantities" : "Quantities",
+    "edit_order_detail" : "Edit order detail",
+    "order_detail_created" : "Order detail created",
+    "order_detail_updated" : "Order detail updated",
+    "order_detail_deleted" : "Order detail deleted",
+    "failed_to_create_order_detail" : "Failed to create order detail",
+    "failed_to_update_order_detail" : "Failed to update order detail",
+    "pending" : "Pending",
+    "approved" : "Approved",
+    "denied" : "Denied"  
 }

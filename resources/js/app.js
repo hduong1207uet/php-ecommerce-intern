@@ -95,23 +95,26 @@ $(document).ready(function () {
     });
     
     //Increase or deacrease quantity
-    let quantitiy = 1;
     $('.quantity-right-plus').click(function (e) {
         // Stop acting like a button
         e.preventDefault();
         // Get the field name
+        let maxQuantity = $(this).attr('max-val');
         let quantity = parseInt($('#quantity').val());
+        if (quantity > 0 && quantity < maxQuantity) {
             $('#quantity').val(quantity + 1);
+        }                
     });
 
     $('.quantity-left-minus').click(function (e) {
         // Stop acting like a button
         e.preventDefault();
-        // Get the field name
+        // Get the field name        
+        let minQuantity = 1;
         let quantity = parseInt($('#quantity').val());
-            if (quantity > 0) {
-                $('#quantity').val(quantity - 1);
-            }
+        if (quantity > minQuantity) {
+            $('#quantity').val(quantity - 1);
+        }
     });
 
     //Order button

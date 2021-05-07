@@ -22,7 +22,7 @@
     "adminator" : "Quản trị viên",
     "logout" : "Đăng xuất",
     "search" : "Tìm kiếm",
-    "about_us" : "Về chúng tôi", 
+    "about_us" : "Về chúng tôi",
     "guitarshop_inf" : "THÔNG TIN GUITAR SHOP",
     "showroms_agency" : "Hệ thống showroom, đại lý",
     "contact_us" : "Liên Hệ / Góp Ý",
@@ -127,9 +127,9 @@
     "add_new_comment" : "Thêm bình luận mới",
     "user" : "Người dùng",
     "content" : "Nội dung",
-    "comment_created" : "Bình luận được tạo thành công.",    
+    "comment_created" : "Bình luận được tạo thành công.",
     "comment_deleted" : "Bình luận đã được xóa thành công.",
-    "enter_your_phone_number" : "Hãy nhập số điện thoại của bạn",   
+    "enter_your_phone_number" : "Hãy nhập số điện thoại của bạn",
     "user_name" : "Tên người dùng",
     "status" : "Trạng thái",
     "order_date" : "Ngày đặt hàng",
@@ -163,5 +163,7 @@
     "pending" : "Đang chờ",
     "approved" : "Đã xác nhận",
     "denied" : "Đã từ chối",
-    "product_left" : "sản phẩm còn lại"
+    "product_left" : "sản phẩm còn lại",
+    "order_failed_quantity_exceed" : "Đặt hàng thất bại do số lượng sản phẩm trong giỏ hàng của bạn vượt quá số lượng trong kho.",
+    "in_stock" : "Trong kho"
 }

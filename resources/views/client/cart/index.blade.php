@@ -35,6 +35,7 @@
                         <td data-th="Price">${{ $details['price'] }}</td>
                         <td data-th="quantity">
                             <input type="number" name="quantity" initial-quantity="{{ $details['quantity'] }}" id="cart_quantity_{{ $id }}" data-id="{{ $id }}" value="{{ $details['quantity'] }}" class="cart_quantity form-control quantity" min=1 max="{{ $productQuantity[$id] }}"/>
+                            <p>{!! __('in_stock') . ': <b class="text-primary">' . $productQuantity[$id] . '</b>' !!}</p>
                         </td>
                         <td data-th="Subtotal" class="text-center" >
                             $<p id="sub_total_{{ $id }}">{{ $details['price'] * $details['quantity'] }}</p>

@@ -8,6 +8,7 @@ use App\Http\Requests\Admin_OrderFormRequest;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\User;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -60,7 +61,7 @@ class OrderController extends Controller
     public function viewDetails($id)
     {
         $order = Order::findOrFail($id);
-        $orderDetails = $order->orderDetails()->with('product')->paginate(config('app.records_per_page'));        
+        $orderDetails = $order->orderDetails()->with('product')->paginate(config('app.records_per_page'));
 
         return view('admin.order-details.index', compact('order', 'orderDetails'));
     }
@@ -68,17 +69,24 @@ class OrderController extends Controller
     public function loadOrders(Request $request) {
         $orders = Order::all()->load('user');
         $orders = $orders->toArray();
-        
+
         return $orders;
     }
 
     public function approve(Request $request) {
-        $order = Order::findOrFail($request->orderId);
-        $order->update([
-            'status' => config('app.approved_order_status'),
-        ]);        
+        $order = Order::findOrFail($request->orderId)->load('orderDetails.product');
+        foreach ($order->orderDetails as $orderDetail) {
+            $quantityLeft = $orderDetail->product->quantity_in_stock - $orderDetail->quantities;
+            if ($quantityLeft >= 0) {
+                $orderDetail->product->quantity_in_stock = $quantityLeft;
+            } else {
+                return abort(Response::HTTP_NOT_FOUND);
+            }
+        }
+        $order->status = config('app.approved_order_status');
+        $order->push();
         $order->load('user')->toArray();
-        
+
         return $order;
     }
 
@@ -86,9 +94,9 @@ class OrderController extends Controller
         $order = Order::findOrFail($request->orderId);
         $order->update([
             'status' => config('app.denied_order_status'),
-        ]);        
+        ]);
         $order->load('user')->toArray();
-        
+
         return $order;
     }
 }

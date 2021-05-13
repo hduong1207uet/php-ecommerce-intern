@@ -20,6 +20,7 @@
     
 </head>
 <body>
+    @include('sweetalert::alert')
     <div class="container-fluid ml-1">
         <div class="row mt-2">
             <div class="col-md-2">

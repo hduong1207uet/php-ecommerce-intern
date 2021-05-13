@@ -4,14 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin_OrderFormRequest;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\User;
 use App\Models\Product;
+use App\Repositories\Order\OrderRepositoryInterface;
 
 class OrderController extends Controller
 {
+    protected $orderRepository;
+
+    public function __construct(OrderRepositoryInterface $orderRepository)
+    {
+        $this->middleware('auth');
+        $this->orderRepository = $orderRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +27,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with('user:id,name')->paginate(config('app.records_per_page'));
-
-        return view('admin.orders.index', compact('orders'));
+        return view('admin.orders.index');
     }
 
     /**
@@ -32,10 +38,7 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        $order = Order::findOrFail($id);
-        $users = User::select('id', 'name', 'phone_number')->get();
-
-        return view('admin.orders.edit', compact('order', 'users'));
+        //
     }
 
     /**
@@ -46,10 +49,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        $order = Order::findOrFail($id);
-        $order->delete();
-
-        return redirect(route('orders.index'))->with('success', __('order_deleted'));
+        //
     }
 
     /**
@@ -60,21 +60,30 @@ class OrderController extends Controller
      */
     public function viewDetails($id)
     {
-        $order = Order::findOrFail($id);
-        $orderDetails = $order->orderDetails()->with('product')->paginate(config('app.records_per_page'));
+        $orderDetails = $this->orderRepository->getDetails($id);
 
-        return view('admin.order-details.index', compact('order', 'orderDetails'));
+        return view('admin.order-details.index', compact('orderDetails'));
     }
 
-    public function loadOrders(Request $request) {
-        $orders = Order::all()->load('user');
-        $orders = $orders->toArray();
-
-        return $orders;
+    /**
+     * Load orders.
+     *
+     * @param
+     * @return array
+     */
+    public function loadOrders() {
+        return $this->orderRepository->loadOrders();
     }
 
+    /**
+     * Approve order.
+     *
+     * @param  Request $request
+     * @return array $order
+     */
     public function approve(Request $request) {
-        $order = Order::findOrFail($request->orderId)->load('orderDetails.product');
+        $order = $this->orderRepository->find($request->orderId, ['orderDetails.product', 'user']);
+
         foreach ($order->orderDetails as $orderDetail) {
             $quantityLeft = $orderDetail->product->quantity_in_stock - $orderDetail->quantities;
             if ($quantityLeft >= 0) {
@@ -85,18 +94,22 @@ class OrderController extends Controller
         }
         $order->status = config('app.approved_order_status');
         $order->push();
-        $order->load('user')->toArray();
 
-        return $order;
+        return $order->toArray();
     }
 
+    /**
+     * Deny order.
+     *
+     * @param  Request $request
+     * @return array $order
+     */
     public function deny(Request $request) {
-        $order = Order::findOrFail($request->orderId);
-        $order->update([
+        $order = $this->orderRepository->find($request->orderId, 'user');
+        $this->orderRepository->update($request->orderId, [
             'status' => config('app.denied_order_status'),
         ]);
-        $order->load('user')->toArray();
 
-        return $order;
+        return $order->toArray();
     }
 }

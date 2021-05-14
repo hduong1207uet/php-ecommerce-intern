@@ -26,7 +26,7 @@ Route::namespace('Auth')->group(function () {
     // Registration Routes...
     Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'RegisterController@register');
-});    
+});
 
 Route::prefix('cart')->group(function () {
     Route::get('/', 'HomeController@viewCart')->name('cart');
@@ -53,22 +53,22 @@ Route::namespace('Admin')->group(function () {
     Route::get('/products/view-details/{id}', 'ProductController@viewDetails')->name('products.view_details');
     Route::get('/products/{id}/add-images', 'ImageController@createImage')->name('products.add_images');
     Route::get('/products/{id}/add-comment', 'CommentController@createComment')->name('products.add_comment');
-  
+
     // Fix order
-    Route::prefix('orders')->group(function (){            
+    Route::prefix('orders')->group(function (){
         Route::get('/load-orders', 'OrderController@loadOrders');
         Route::post('/approve', 'OrderController@approve')->name('orders.approve');
         Route::post('/deny', 'OrderController@deny')->name('orders.deny');
-        Route::get('/{id}/view-details', 'OrderController@viewDetails')->name('orders.view_details'); 
+        Route::get('/{id}/view-details', 'OrderController@viewDetails')->name('orders.view_details');
     });
 
     Route::resources([
         'categories' => 'CategoryController',
         'products' => 'ProductController',
         'images' => 'ImageController',
-        'comments' => 'CommentController',        
+        'comments' => 'CommentController',
     ]);
-    
+
     Route::resource('orders', OrderController::class)->only([
         'index',
     ]);

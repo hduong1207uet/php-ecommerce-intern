@@ -19,18 +19,18 @@
     width: 20%;
 }
 
-#lang-btn {
+.lang-btn {
     margin: 5px;
     width: 50px;
     margin-bottom: 20px;
-}   
+}
 
 .side-bar-row {
     height: 50px;
     padding-left: 20px;
     padding-top: 15px;
     font-size: bold;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .side-bar-row:hover {
@@ -71,7 +71,7 @@
 .policy-col-content p {
     font-size: 14px;
     text-align: initial;
-    padding-top: 15px;   
+    padding-top: 15px;
 }
 
 .policy-col:hover {
@@ -121,7 +121,7 @@
 }
 
 .top-menu {
-    background-color: rgb(255, 204, 0); 
+    background-color: rgb(255, 204, 0);
 }
 
 .my-menu li {
@@ -132,7 +132,7 @@
 
 .btn {
     font-size: 15px !important;
-    
+
 }
 
 .client-card {
@@ -144,7 +144,7 @@
 .client-card-body {
     border-top :1px solid silver;
 }
-    
+
 .card-price {
     color: red;
 }
@@ -152,7 +152,7 @@
 .col-11 h5 {
     padding-top: 15px;
     margin-left: 10px;
-}    
+}
 .col-1 a {
     margin-right: 10px;
 }

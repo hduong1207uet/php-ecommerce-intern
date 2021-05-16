@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Boostrap -->    
+    <!-- Boostrap -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->
@@ -27,7 +27,7 @@
                 <div class="col-2">
 
                 </div>
-                <div class="col-8">                    
+                <div class="col-8">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
@@ -50,7 +50,7 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('register') }}</a>
                                     </li>
                                 @endif
-                            @else 
+                            @else
                             <li class="nav-item dropdown">
                             <div id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
@@ -69,10 +69,10 @@
                             @endguest
                         </ul>
                         <!--language Div-->
-                        <div class="d-flex flex-row-reverse mt-3">
-                            <a href="{{ route('lang', ['lang' => 'vi']) }}"><button class="btn btn-info btn-sm" id="lang-btn">VI</button></a>
-                            <a href="{{ route('lang', ['lang' => 'en' ]) }}"><button class="btn btn-info btn-sm" id="lang-btn">EN</button></a>
-                        </div>   
+                        <div class="lang d-flex flex-row-reverse mt-3">
+                            <a href="{{ route('lang', ['lang' => 'vi']) }}"><button class="btn btn-info btn-sm lang-btn" id="vi">VI</button></a>
+                            <a href="{{ route('lang', ['lang' => 'en' ]) }}"><button class="btn btn-info btn-sm lang-btn" id="en">EN</button></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2">
@@ -82,11 +82,11 @@
                 </div>
             </div>
         </nav>
-       
-        <div class="container-fluid mt-0">            
+
+        <div class="container-fluid mt-0">
             @yield('content')
         </div>
-        
+
     </div>
 </body>
 </html>
